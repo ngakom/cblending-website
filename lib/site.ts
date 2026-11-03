@@ -166,7 +166,7 @@ export const JOURNEY = [
 
 export const TEAM = [
   { name: "KG Sekwaila", role: "Director" },
-  { name: "Corlia Pieterse", role: "Operations Manager" },
+  { name: "Carlia Pieterse", role: "Operations Manager" },
   { name: "Aaron Mablo", role: "Production Lead" },
   { name: "Khensani Matjila", role: "QA / HSE Lead" },
   { name: "Kwena Kgony", role: "Warehouse Lead" },
