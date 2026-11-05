@@ -14,18 +14,17 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About CBS"
-        title="Sustainable transformation in the food manufacturing value chain"
+        eyebrow="about cbs"
+        title="sustainable transformation in food manufacturing"
         intro="A Level 1 B-BBEE business combining lower cost and risk for our customers with real, shareholder-led economic transformation."
         image="/images/team-warehouse.jpg"
       />
 
-      {/* Who we are */}
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1.2fr_1fr] lg:px-10 lg:py-24">
-        <div className="space-y-5 text-lg leading-relaxed text-slate">
-          <p data-reveal className="eyebrow">Who we are</p>
-          <h2 data-reveal className="heading">Born from partnership</h2>
-          <p>
+        <div data-reveal className="space-y-5 text-lg leading-relaxed text-muted">
+          <h2 className="heading">born from partnership</h2>
+          <span className="rule" />
+          <p className="pt-2">
             CBS is a Level 1 Black Economic Empowered business that was born out of a need to reduce complexity, risk and cost in the value
             chain of manufacturing certain products for one of our key customers. Together we built a business plan that resulted in the
             first Black-owned contract blending manufacturer in South Africa — one that truly represents sustainable transformation, with
@@ -38,69 +37,76 @@ export default function AboutPage() {
           </p>
           <p>
             Our long-term partnerships with blue-chip customers have enabled us to develop our employees into highly qualified
-            professionals in quality and food safety, supply chain, engineering, finance and project management. Our goal is to empower our
-            people to reach their full potential while building a sustainable enterprise focused on food products, skills development and
-            job creation.
+            professionals in quality and food safety, supply chain, engineering, finance and project management.
           </p>
         </div>
         <div className="space-y-5">
-          <div data-reveal="zoom" className="relative aspect-[3/2] overflow-hidden rounded-[2rem]">
-            <Image src="/images/team.jpg" alt="The CBS team" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+          <div data-reveal="right" className="relative aspect-[3/2] overflow-hidden">
+            <Image src="/images/team.jpg" alt="The CBS team" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover transition-transform duration-700 hover:scale-105" />
           </div>
-          <div className="card lift p-7">
-            <p className="text-xl font-extrabold text-teal">Our goal</p>
-            <p className="mt-2 leading-relaxed text-ink/80">
+          <div data-reveal className="box p-7">
+            <p className="text-xl font-black text-white">our goal</p>
+            <p className="mt-2 leading-relaxed text-muted">
               To deliver world-class service to our customers while empowering our employees and the communities around us.
             </p>
           </div>
         </div>
       </section>
 
+      <div className="divider" />
+
       {/* Journey */}
-      <section className="bg-pale/60 py-20 lg:py-24">
-        <div className="mx-auto max-w-5xl px-5 lg:px-10">
-          <p data-reveal className="eyebrow">Our journey</p>
-          <h2 data-reveal className="heading mt-3">From inception to trusted partner</h2>
-          <ol data-reveal-group className="relative mt-12 space-y-8 border-l-2 border-teal/25 pl-8">
-            {JOURNEY.map((j) => (
-              <li key={j.year} className="relative">
-                <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-pale bg-teal" />
-                <p className="text-sm font-extrabold text-green">{j.year}</p>
-                <h3 className="text-xl font-extrabold text-teal">{j.title}</h3>
-                <p className="mt-1 leading-relaxed text-slate">{j.text}</p>
-              </li>
-            ))}
-          </ol>
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
+        <div data-reveal>
+          <h2 className="heading">our journey</h2>
+          <span className="rule" />
         </div>
+        <ol data-reveal-group className="mt-12 grid gap-4 md:grid-cols-5">
+          {JOURNEY.map((j) => (
+            <li key={j.year} className="box lift p-6">
+              <p className="text-4xl font-black text-green">{j.year}</p>
+              <h3 className="mt-3 text-lg font-black lowercase text-white">{j.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{j.text}</p>
+            </li>
+          ))}
+        </ol>
       </section>
+
+      <div className="divider" />
 
       {/* Values */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <p data-reveal className="eyebrow">Our values</p>
-        <h2 data-reveal className="heading mt-3 max-w-3xl">Aligned with the principles of the Südzucker Group</h2>
-        <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-reveal className="max-w-3xl">
+          <h2 className="heading">our values</h2>
+          <span className="rule" />
+          <p className="mt-6 text-lg text-muted">Aligned with the principles of the Südzucker Group.</p>
+        </div>
+        <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
-            <div key={v.title} className="card lift p-7">
-              <h3 className="text-lg font-extrabold uppercase tracking-wide text-teal">{v.title}</h3>
-              <p className="mt-3 leading-relaxed text-ink/80">{v.text}</p>
+            <div key={v.title} className="box lift p-7">
+              <h3 className="text-2xl font-black lowercase text-white">{v.title}</h3>
+              <span className="rule !mt-4 !w-10" />
+              <p className="mt-4 leading-relaxed text-muted">{v.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Advantages */}
-      <section className="bg-teal-deep py-20 text-white lg:py-24">
+      <section className="border-y border-line bg-black py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">Why CBS</p>
-          <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Our competitive advantages</h2>
-          <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div data-reveal>
+            <h2 className="heading">why cbs</h2>
+            <span className="rule" />
+          </div>
+          <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {ADVANTAGES.map((a) => (
-              <div key={a.title} className="rounded-2xl border border-white/15 bg-white/5 p-7">
-                <h3 className="text-xl font-extrabold">{a.title}</h3>
-                <ul className="mt-4 space-y-2.5 text-white/80">
+              <div key={a.title} className="box p-7">
+                <h3 className="text-xl font-black lowercase text-white">{a.title}</h3>
+                <ul className="mt-4 space-y-2.5 text-muted">
                   {a.points.map((p) => (
                     <li key={p} className="flex gap-2.5">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-green" />
                       {p}
                     </li>
                   ))}
@@ -113,24 +119,26 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <p data-reveal className="eyebrow">Meet the team</p>
-        <h2 data-reveal className="heading mt-3">The people behind every blend</h2>
-        <ul data-reveal-group className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div data-reveal>
+          <h2 className="heading">meet the team</h2>
+          <span className="rule" />
+        </div>
+        <ul data-reveal-group className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {TEAM.map((t) => (
-            <li key={t.name} className="card-white lift p-6 text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-pale text-xl font-extrabold text-teal">
+            <li key={t.name} className="box lift p-6 text-center">
+              <span className="mx-auto flex h-16 w-16 items-center justify-center border-2 border-green text-xl font-black text-green">
                 {t.name
                   .split(" ")
                   .map((n) => n[0])
                   .join("")
                   .slice(0, 2)}
               </span>
-              <p className="mt-4 font-extrabold text-ink">{t.name}</p>
-              <p className="text-sm text-slate">{t.role}</p>
+              <p className="mt-4 font-extrabold text-white">{t.name}</p>
+              <p className="text-sm text-muted">{t.role}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-sm text-slate">Supported by our production operators, QC, cleaning and sanitation teams.</p>
+        <p className="mt-6 text-sm text-muted">Supported by our production operators, QC, cleaning and sanitation teams.</p>
       </section>
 
       <CallToAction />

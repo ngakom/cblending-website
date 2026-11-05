@@ -5,47 +5,42 @@ import { SITE, mailLink, telLink } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-teal-deep text-white">
+    <footer className="border-t border-line bg-black">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] lg:px-10">
         <div>
           {/* Guidelines: on dark backgrounds the logo sits on a white panel. */}
-          <span className="inline-block rounded-xl bg-white p-3">
+          <span className="inline-block bg-white p-3">
             <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} className="h-16 w-auto" />
           </span>
-          <p className="mt-5 max-w-sm leading-relaxed text-white/80">
+          <p className="mt-5 max-w-sm leading-relaxed text-muted">
             A proudly South African, Level 1 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
             Kosher accredited.
           </p>
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/60">Explore</p>
+          <p className="text-sm font-extrabold lowercase text-white">explore</p>
           <ul className="mt-4 space-y-2.5">
-            {NAV.map((item) => (
+            {[...NAV, { label: "Privacy Policy", href: "/privacy-policy" }].map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="font-semibold text-white/90 transition-colors hover:text-white">
+                <Link href={item.href} className="lowercase text-muted transition-colors hover:text-green">
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/privacy-policy" className="font-semibold text-white/90 transition-colors hover:text-white">
-                Privacy Policy
-              </Link>
-            </li>
           </ul>
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/60">Contact</p>
-          <ul className="mt-4 space-y-2.5 text-white/90">
+          <p className="text-sm font-extrabold lowercase text-white">get in touch</p>
+          <ul className="mt-4 space-y-2.5 text-muted">
             <li>
-              <a href={mailLink()} className="font-semibold hover:text-white">
+              <a href={mailLink()} className="transition-colors hover:text-green">
                 {SITE.email}
               </a>
             </li>
             <li>
-              <a href={telLink} className="font-semibold hover:text-white">
+              <a href={telLink} className="transition-colors hover:text-green">
                 {SITE.phone.display}
               </a>
             </li>
@@ -59,11 +54,9 @@ export default function Footer() {
       </div>
 
       {/* Guidelines: website footer line on every page. */}
-      <div className="border-t border-white/15">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-sm text-white/70 sm:flex-row sm:justify-between lg:px-10">
-          <p>
-            {SITE.name.toLowerCase()} &nbsp;|&nbsp; www.cblending.co.za
-          </p>
+      <div className="border-t border-line">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-sm text-muted sm:flex-row sm:justify-between lg:px-10">
+          <p>{SITE.name.toLowerCase()} &nbsp;|&nbsp; www.cblending.co.za</p>
           <p>
             © {new Date().getFullYear()} {SITE.legalName}
           </p>

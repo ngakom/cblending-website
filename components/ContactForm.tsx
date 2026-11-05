@@ -9,9 +9,9 @@ const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 const TOPICS = ["New product / blending enquiry", "Contract packing", "Supplier enquiry", "Careers", "Other"];
 
-const label = "mb-1.5 block text-sm font-bold text-ink";
+const label = "mb-1.5 block text-sm font-bold lowercase text-white";
 const field =
-  "w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition-colors placeholder:text-slate/60 focus:border-teal focus:ring-2 focus:ring-teal/15";
+  "w-full border border-line bg-night px-4 py-3 text-[15px] text-white outline-none transition-colors placeholder:text-muted/60 focus:border-green";
 
 type Status = "idle" | "sending" | "sent" | "mailto" | "error";
 
@@ -49,9 +49,9 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="card p-8 text-center">
-        <p className="text-2xl font-extrabold text-teal">Thank you — your enquiry has been sent.</p>
-        <p className="mt-2 text-slate">Our team will be in touch shortly.</p>
+      <div className="box p-8 text-center">
+        <p className="text-2xl font-black lowercase text-white">thank you — your enquiry has been sent.</p>
+        <p className="mt-2 text-muted">Our team will be in touch shortly.</p>
       </div>
     );
   }
@@ -106,10 +106,10 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center">
-        <button type="submit" disabled={status === "sending"} className="btn-primary disabled:opacity-60">
-          {status === "sending" ? "Sending…" : "Send enquiry"}
+        <button type="submit" disabled={status === "sending"} className="btn-primary lowercase disabled:opacity-60">
+          {status === "sending" ? "sending…" : "send enquiry"}
         </button>
-        <p className="text-sm text-slate" role="status">
+        <p className="text-sm text-muted" role="status">
           {status === "mailto" && "Your email app has opened with the enquiry — just press send."}
           {status === "error" && `Something went wrong. Please email ${SITE.email} directly.`}
           {status === "idle" && "We treat every enquiry in confidence."}

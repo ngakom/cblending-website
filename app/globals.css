@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-/* CBS corporate identity palette (guidelines p.4). teal-deep is a darker shade of the primary for hover and dark panels. */
+/* Design B: dark, high-contrast layout (inspired by the client's reference) in the CBS palette.
+   Brand colours from the identity guidelines; night/panel are near-black tints of the primary teal. */
 :root {
   --teal: #00717d;
   --teal-deep: #004f57;
@@ -8,7 +9,10 @@
   --pale: #e6f7f0;
   --ink: #1e293b;
   --slate: #64748b;
-  --line: #d5ebe3;
+  --night: #0b1517;
+  --panel: #12201f;
+  --muted: #a7b6b8;
+  --line: rgba(255, 255, 255, 0.14);
 }
 
 @theme inline {
@@ -18,6 +22,9 @@
   --color-pale: var(--pale);
   --color-ink: var(--ink);
   --color-slate: var(--slate);
+  --color-night: var(--night);
+  --color-panel: var(--panel);
+  --color-muted: var(--muted);
   --color-line: var(--line);
   --font-sans: var(--font-nunito);
 }
@@ -27,34 +34,43 @@ html {
 }
 
 body {
-  background: #ffffff;
-  color: var(--ink);
+  background: var(--night);
+  color: #ffffff;
   font-family: var(--font-nunito), system-ui, sans-serif;
 }
 
 @layer components {
   .eyebrow {
-    @apply text-xs font-extrabold uppercase tracking-[0.2em] text-green;
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-green;
   }
   .heading {
-    @apply text-3xl font-extrabold leading-tight text-teal sm:text-4xl;
+    @apply text-3xl font-black leading-[1.1] text-white sm:text-5xl;
+  }
+  /* Short green underline under headings; grows in when its section is revealed. */
+  .rule {
+    @apply mt-5 block h-1 w-16 origin-left bg-green;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(0,113,125,0.25)] transition-all hover:-translate-y-0.5 hover:bg-teal-deep;
+    @apply inline-flex items-center justify-center gap-2 bg-green px-6 py-3 text-sm font-extrabold text-night transition-colors hover:bg-white;
   }
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal px-6 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white;
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-white px-6 py-2.5 text-sm font-extrabold text-white transition-colors hover:bg-white hover:text-night;
   }
-  .btn-light {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-teal transition-all hover:-translate-y-0.5 hover:bg-pale;
+  .box {
+    @apply border border-line bg-panel/40 transition-colors hover:border-green/70;
   }
-  /* Guidelines: pale green cards with teal borders for grouped content. */
-  .card {
-    @apply rounded-2xl border border-teal/25 bg-pale;
+  .divider {
+    @apply mx-auto max-w-7xl border-t border-line;
   }
-  .card-white {
-    @apply rounded-2xl border border-line bg-white shadow-[0_10px_30px_rgba(30,41,59,0.06)];
-  }
+}
+
+.js [data-reveal] .rule,
+.js [data-reveal-group] .rule {
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s;
+}
+.js .in .rule {
+  transform: scaleX(1);
 }
 
 .fade-up {
@@ -204,7 +220,7 @@ body {
 }
 .lift:hover {
   translate: 0 -6px;
-  box-shadow: 0 22px 45px rgba(0, 79, 87, 0.16);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {

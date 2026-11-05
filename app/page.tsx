@@ -5,12 +5,26 @@ import CallToAction from "@/components/CallToAction";
 import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
 import { delay } from "@/lib/motion";
-import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
+import { CERTIFICATIONS, PARTNERS, SPECIALTIES, STATS } from "@/lib/site";
 
-const COMMITMENTS = [
-  { title: "Customer alignment", text: "We place immense value on our customer relationships and take an uncompromising approach to confidentiality and integrity." },
-  { title: "Protecting client brands", text: "Ultimately it is in our best interest to protect our clients' brands as if they are our own." },
-  { title: "Trust & integrity", text: "Confidentiality is foundational to every partnership we build — from formulation to finished blend." },
+const ICON = {
+  blend: "M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3M7 15h10",
+  shield: "M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3ZM8.5 12l2.5 2.5 4.5-5",
+  partner: "M3 11l4-4 5 3 5-3 4 4M7 7v6l5 4 5-4V7M12 17v4",
+};
+
+const BOXES = [
+  { icon: ICON.blend, title: "our services", text: "Blending, sensory lab, project management and logistics — from concept to packed product.", href: "/services", cta: "explore services" },
+  { icon: ICON.shield, title: "quality & safety", text: "FSSC 22000 certified, Halaal and Kosher accredited, with a food safety culture at our core.", href: "/quality", cta: "our standards" },
+  { icon: ICON.partner, title: "partner with us", text: "Share your product, volumes and timelines and we'll propose the right supply model.", href: "/contact", cta: "get in touch" },
+];
+
+const STRIP = [
+  { src: "/images/laboratory.jpg", alt: "Quality testing in the laboratory" },
+  { src: "/images/ribbon-blender.jpg", alt: "A double helix ribbon blender" },
+  { src: "/images/blending-operator.jpg", alt: "Loading ingredients into a blender" },
+  { src: "/images/inspection.jpg", alt: "A quality inspection on the factory floor" },
+  { src: "/images/distribution-truck.jpg", alt: "A distribution truck ready for delivery" },
 ];
 
 export default function Home() {
@@ -18,215 +32,154 @@ export default function Home() {
     <>
       <BusinessSchema />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-pale via-pale/50 to-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:py-20">
-          <div className="fade-up">
-            <p className="eyebrow">Proudly South African · Level 1 B-BBEE</p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] text-teal sm:text-5xl lg:text-[3.4rem]">
-              Precision dry blending for leading food &amp; beverage brands
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
-              Collaborative Blending Solutions is a contract manufacturer of dry blended food solutions — from fortification mixes and hot
-              chocolates to seasonings and custom formulations — made in our FSSC 22000 certified facility.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Partner with us
-              </Link>
-              <Link href="/services" className="btn-secondary">
-                Our services
-              </Link>
-            </div>
-            <ul className="mt-10 flex flex-wrap gap-2">
-              {["FSSC 22000", "Halaal (SANHA · NIHT)", "Kosher", "SEDEX listed"].map((c) => (
-                <li key={c} className="rounded-full border border-teal/25 bg-white px-3.5 py-1.5 text-xs font-bold text-teal">
-                  ✓ {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative" data-reveal="zoom">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_rgba(0,79,87,0.25)]">
-              <Image
-                src="/images/blending-operator.jpg"
-                alt="A CBS operator loading ingredients into a blender"
-                fill
-                priority
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="ken-burns object-cover"
-              />
-            </div>
-            <div className="float absolute -bottom-8 -left-4 hidden w-48 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:block lg:-left-10">
-              <div className="relative aspect-[4/3]">
-                <Image src="/images/laboratory.jpg" alt="Quality testing in the CBS laboratory" fill sizes="12rem" className="object-cover" />
-              </div>
-            </div>
-            <div style={{ animationDelay: "1.5s" }} className="float card-white absolute left-4 top-4 max-w-[15rem] px-5 py-4 sm:left-auto sm:right-6 sm:-top-5">
-              <p className="text-2xl font-extrabold text-teal">Since 2018</p>
-              <p className="text-xs font-bold text-slate">SA&apos;s first Black-owned contract blender</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-teal">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-12 text-white lg:grid-cols-4 lg:px-10">
-          {STATS.map((s, i) => (
-            <div key={s.label} data-reveal style={delay(i)}>
-              <p className="text-4xl font-extrabold">{s.count ? <CountUp to={s.count} suffix={s.suffix} /> : s.value}</p>
-              <p className="mt-1 text-sm leading-snug text-white/80">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Who we are */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-        <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem]" data-reveal="left">
-          <Image src="/images/team-warehouse.jpg" alt="The CBS team in the warehouse" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-        </div>
-        <div data-reveal="right">
-          <p className="eyebrow">Who we are</p>
-          <h2 className="heading mt-3">Reducing complexity, risk and cost in the food value chain</h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate">
-            CBS was born out of a need to reduce complexity, risk and cost in manufacturing for one of our key customers. Together we built
-            the first Black-owned contract blending manufacturer in South Africa — with shareholders directly involved in the day-to-day
-            running of the business.
+      {/* Hero: full-bleed photo, centred headline (reference: wagamama.com). */}
+      <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden">
+        <Image src="/images/blending-operator.jpg" alt="" fill priority sizes="100vw" className="ken-burns -z-10 object-cover" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night/70 via-night/55 to-night" />
+        <div className="mx-auto flex max-w-4xl flex-col items-center px-5 py-24 text-center">
+          <p className="fade-up eyebrow">proudly south african · level 1 b‑bbee</p>
+          <h1 className="fade-up mt-5 text-5xl font-black leading-[1.02] text-white sm:text-7xl" style={{ animationDelay: "120ms" }}>
+            precision blending for the brands you love
+          </h1>
+          <p className="fade-up mt-7 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl" style={{ animationDelay: "260ms" }}>
+            Contract manufacturing of dry blended food solutions — fortification mixes, hot chocolates, powdered drinks, seasonings and
+            custom formulations — in our FSSC 22000 certified facility.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-slate">
-            Today we blend sweet and savoury products for leading FMCG and Quick Service Restaurant brands, as part of the Südzucker Group
-            through our partnership with CoSo / PortionPack Group.
-          </p>
-          <Link href="/about" className="btn-secondary mt-8">
-            More about CBS
-          </Link>
+          <div className="fade-up mt-9 flex flex-wrap justify-center gap-3" style={{ animationDelay: "380ms" }}>
+            <Link href="/contact" className="btn-primary">
+              partner with us
+            </Link>
+            <Link href="/services" className="btn-outline">
+              our services
+            </Link>
+          </div>
         </div>
+        <a href="#discover" aria-label="Scroll down" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white">
+          <svg className="float" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </a>
       </section>
 
-      {/* Specialties */}
-      <section className="bg-pale/60 py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="max-w-2xl" data-reveal>
-            <p className="eyebrow">Our specialties</p>
-            <h2 className="heading mt-3">What we blend</h2>
-          </div>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {SPECIALTIES.map((s, i) => (
-              <li key={s} data-reveal style={delay(i, 60)} className="card-white lift flex items-center gap-4 p-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-teal bg-pale text-sm font-extrabold text-teal">
-                  {i + 1}
-                </span>
-                <span className="font-bold leading-snug text-ink">{s}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl" data-reveal>
-            <p className="eyebrow">Our services</p>
-            <h2 className="heading mt-3">From concept to finished, packed product</h2>
-          </div>
-          <Link href="/services" className="btn-secondary self-start md:self-auto">
-            All services
-          </Link>
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s, i) => (
-            <Link key={s.id} href={`/services#${s.id}`} data-reveal style={delay(i)} className="card-white lift group overflow-hidden">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image src={s.image!} alt="" fill sizes="(min-width: 1024px) 22vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-extrabold leading-snug text-teal">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{s.summary}</p>
-              </div>
+      {/* Three outlined boxes */}
+      <section id="discover" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-20 lg:px-10">
+        <div data-reveal-group className="grid gap-6 md:grid-cols-3">
+          {BOXES.map((b) => (
+            <Link key={b.title} href={b.href} className="box lift group flex flex-col items-center px-8 py-12 text-center">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-white transition-colors group-hover:text-green">
+                <path d={b.icon} />
+              </svg>
+              <h2 className="mt-6 text-3xl font-black text-white">{b.title}</h2>
+              <span className="rule !mx-auto" />
+              <p className="mt-5 flex-1 leading-relaxed text-muted">{b.text}</p>
+              <span className="btn-primary mt-8">{b.cta}</span>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Process */}
-      <section className="bg-teal-deep py-20 text-white lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div data-reveal>
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">How we work</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
-          </div>
-          <ol className="mt-12 grid gap-6 md:grid-cols-4">
-            {PROCESS.map((p, i) => (
-              <li key={p.title} data-reveal style={delay(i, 120)} className="relative rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:bg-white/10">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-pale text-lg font-extrabold text-pale">{i + 1}</span>
-                <h3 className="mt-5 text-xl font-extrabold">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-white/75">{p.text}</p>
-              </li>
-            ))}
-          </ol>
+      <div className="divider" />
+
+      {/* Story split */}
+      <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
+        <div data-reveal>
+          <h2 className="heading">south africa&apos;s first black-owned contract blender</h2>
+          <span className="rule" />
+          <p className="mt-7 text-lg leading-relaxed text-muted">
+            CBS was born out of a need to reduce complexity, risk and cost in the value chain for one of our key customers. Today our
+            shareholders are directly involved in the day-to-day running of the business — and we blend sweet and savoury products for
+            leading FMCG and Quick Service Restaurant brands, as part of the Südzucker Group through CoSo / PortionPack Group.
+          </p>
+          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 font-extrabold text-white">
+            learn more about cbs
+            <span className="text-green transition-transform group-hover:translate-x-1">→</span>
+          </Link>
         </div>
+        <div data-reveal="right" className="relative aspect-[4/3] overflow-hidden">
+          <Image src="/images/team-warehouse.jpg" alt="The CBS team in the warehouse" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover transition-transform duration-700 hover:scale-105" />
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* Staggered photo strip */}
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
+        <div data-reveal-group className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {STRIP.map((p, i) => (
+            <div key={p.src} className={`relative aspect-[9/16] overflow-hidden ${i % 2 ? "lg:mt-0" : "lg:mt-14"} ${i === 4 ? "hidden sm:block" : ""}`}>
+              <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 18vw, 45vw" className="object-cover transition-transform duration-700 hover:scale-110" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* Stats */}
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {STATS.map((s, i) => (
+            <div key={s.label} data-reveal style={delay(i)} className="box p-7">
+              <p className="text-4xl font-black text-green sm:text-5xl">{s.count ? <CountUp to={s.count} suffix={s.suffix} /> : s.value}</p>
+              <p className="mt-3 text-sm leading-snug text-muted">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* Specialties */}
+      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[1fr_1.4fr] lg:px-10 lg:py-24">
+        <div data-reveal>
+          <h2 className="heading">what we blend</h2>
+          <span className="rule" />
+          <p className="mt-7 text-lg leading-relaxed text-muted">Precision dry blending solutions for leading food and beverage brands.</p>
+          <Link href="/services" className="btn-outline mt-8">
+            all services
+          </Link>
+        </div>
+        <ul data-reveal-group className="grid sm:grid-cols-2 sm:gap-x-8">
+          {SPECIALTIES.map((s, i) => (
+            <li key={s} className="group flex items-baseline gap-4 border-b border-line py-4">
+              <span className="text-sm font-extrabold text-green">0{i + 1}</span>
+              <span className="text-2xl font-black lowercase text-white transition-all duration-300 group-hover:translate-x-2 group-hover:text-green">{s}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Partners */}
-      <section className="py-20 text-center lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10" data-reveal>
-          <p className="eyebrow">Our partners</p>
-          <h2 className="heading mt-3">Trusted blending partner to leading FMCG and QSR brands</h2>
-        </div>
-        <div className="mt-12 space-y-4" data-reveal>
-          <Marquee items={PARTNERS.slice(0, 5)} itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
-          <Marquee items={PARTNERS.slice(5)} reverse itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
-        </div>
-      </section>
-
-      {/* Quality */}
-      <section className="bg-pale/60">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1fr_1.2fr] lg:px-10 lg:py-24">
-          <div className="relative mx-auto aspect-[2/3] w-full max-w-sm overflow-hidden rounded-[2rem]" data-reveal="left">
-            <Image src="/images/ribbon-blender.jpg" alt="A stainless steel double helix ribbon blender" fill sizes="24rem" className="object-cover" />
-          </div>
-          <div>
-            <div data-reveal>
-              <p className="eyebrow">Quality &amp; food safety</p>
-              <h2 className="heading mt-3">Living a food safety culture is our highest priority</h2>
-            </div>
-            <ul className="mt-8 space-y-4">
-              {CERTIFICATIONS.map((c, i) => (
-                <li key={c.name} data-reveal="right" style={delay(i, 80)} className="card-white flex gap-4 p-5">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green text-sm font-extrabold text-white">✓</span>
-                  <span>
-                    <span className="block font-extrabold text-teal">{c.name}</span>
-                    <span className="text-slate">{c.detail}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <Link href="/quality" className="btn-secondary mt-8">
-              Quality &amp; safety
-            </Link>
-          </div>
+      <section className="border-y border-line bg-black py-16">
+        <p data-reveal className="text-center text-sm font-extrabold lowercase text-muted">
+          trusted blending partner to leading fmcg and qsr brands
+        </p>
+        <div data-reveal className="mt-8">
+          <Marquee
+            items={PARTNERS}
+            itemClassName="flex items-center gap-4 pr-4 text-3xl font-black text-white/45 transition-colors hover:text-white after:ml-4 after:h-2 after:w-2 after:rounded-full after:bg-green after:content-['']"
+          />
         </div>
       </section>
 
-      {/* Confidentiality */}
+      {/* Certifications */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <div className="max-w-2xl" data-reveal>
-          <p className="eyebrow">Our commitment</p>
-          <h2 className="heading mt-3">Confidentiality you can rely on</h2>
+        <div data-reveal className="max-w-2xl">
+          <h2 className="heading">living a food safety culture</h2>
+          <span className="rule" />
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {COMMITMENTS.map((c, i) => (
-            <div key={c.title} data-reveal style={delay(i, 120)} className="card lift p-7">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-teal bg-white font-extrabold text-teal">{i + 1}</span>
-              <h3 className="mt-5 text-xl font-extrabold text-teal">{c.title}</h3>
-              <p className="mt-2 leading-relaxed text-ink/80">{c.text}</p>
+        <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {CERTIFICATIONS.map((c) => (
+            <div key={c.name} className="box p-6">
+              <p className="text-xl font-black text-white">{c.name}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{c.detail}</p>
             </div>
           ))}
         </div>
+        <Link href="/quality" className="group mt-10 inline-flex items-center gap-2 font-extrabold text-white">
+          quality &amp; safety at cbs
+          <span className="text-green transition-transform group-hover:translate-x-1">→</span>
+        </Link>
       </section>
 
       <CallToAction />

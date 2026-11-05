@@ -10,12 +10,13 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <article className="mx-auto max-w-3xl px-5 py-16 lg:py-20">
-      <p className="eyebrow">Legal</p>
-      <h1 className="mt-3 text-4xl font-extrabold text-teal">Privacy &amp; Cookies Policy</h1>
-      <div className="mt-10 space-y-5 leading-relaxed text-ink/85">
+      <p className="eyebrow">legal</p>
+      <h1 className="mt-3 text-4xl font-black text-white sm:text-5xl">privacy &amp; cookies policy</h1>
+      <span className="rule" />
+      <div className="mt-10 space-y-5 leading-relaxed text-white/80">
         {PRIVACY_POLICY.map((b, i) =>
           b.type === "h" ? (
-            <h2 key={i} className="pt-6 text-2xl font-extrabold text-teal">
+            <h2 key={i} className="pt-6 text-2xl font-black text-white">
               {b.text}
             </h2>
           ) : b.type === "p" ? (
@@ -23,7 +24,7 @@ export default function PrivacyPolicyPage() {
           ) : (
             <ul key={i} className={b.items.every((x) => x.length < 30) ? "grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3" : "list-disc space-y-1.5 pl-6"}>
               {b.items.map((item) => (
-                <li key={item} className={b.items.every((x) => x.length < 30) ? "text-slate" : ""}>
+                <li key={item} className={b.items.every((x) => x.length < 30) ? "text-muted" : ""}>
                   {item}
                 </li>
               ))}
