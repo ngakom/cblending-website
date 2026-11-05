@@ -33,15 +33,15 @@ export default function Home() {
       <BusinessSchema />
 
       {/* Hero: full-bleed photo, centred headline (reference: wagamama.com). */}
-      <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden">
+      <section className="band relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden">
         <Image src="/images/blending-operator.jpg" alt="" fill priority sizes="100vw" className="ken-burns -z-10 object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night/70 via-night/55 to-night" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night/85 via-night/70 to-night/90" />
         <div className="mx-auto flex max-w-4xl flex-col items-center px-5 py-24 text-center">
           <p className="fade-up eyebrow">proudly south african · level 1 <span className="whitespace-nowrap">b-bbee</span></p>
-          <h1 className="fade-up mt-5 text-5xl font-black leading-[1.02] text-white sm:text-7xl" style={{ animationDelay: "120ms" }}>
+          <h1 className="fade-up mt-5 text-5xl font-black leading-[1.02] text-fg sm:text-7xl" style={{ animationDelay: "120ms" }}>
             precision blending for the brands you love
           </h1>
-          <p className="fade-up mt-7 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl" style={{ animationDelay: "260ms" }}>
+          <p className="fade-up mt-7 max-w-2xl text-lg leading-relaxed text-fg/85 sm:text-xl" style={{ animationDelay: "260ms" }}>
             Contract manufacturing of dry blended food solutions — fortification mixes, hot chocolates, powdered drinks, seasonings and
             custom formulations — in our FSSC 22000 certified facility.
           </p>
@@ -54,7 +54,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <a href="#discover" aria-label="Scroll down" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white">
+        <a href="#discover" aria-label="Scroll down" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-fg/70 hover:text-fg">
           <svg className="float" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M6 9l6 6 6-6" />
           </svg>
@@ -66,10 +66,10 @@ export default function Home() {
         <div data-reveal-group className="grid gap-6 md:grid-cols-3">
           {BOXES.map((b) => (
             <Link key={b.title} href={b.href} className="box lift group flex flex-col items-center px-8 py-12 text-center">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-white transition-colors group-hover:text-green">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-fg transition-colors group-hover:text-accent">
                 <path d={b.icon} />
               </svg>
-              <h2 className="mt-6 text-3xl font-black text-white">{b.title}</h2>
+              <h2 className="mt-6 text-3xl font-black text-fg">{b.title}</h2>
               <span className="rule !mx-auto" />
               <p className="mt-5 flex-1 leading-relaxed text-muted">{b.text}</p>
               <span className="btn-primary mt-8">{b.cta}</span>
@@ -90,9 +90,9 @@ export default function Home() {
             shareholders are directly involved in the day-to-day running of the business — and we blend sweet and savoury products for
             leading FMCG and Quick Service Restaurant brands, as part of the Südzucker Group through CoSo / PortionPack Group.
           </p>
-          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 font-extrabold text-white">
+          <Link href="/about" className="group mt-8 inline-flex items-center gap-2 font-extrabold text-fg">
             learn more about cbs
-            <span className="text-green transition-transform group-hover:translate-x-1">→</span>
+            <span className="text-accent transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
         <div data-reveal="right" className="relative aspect-[4/3] overflow-hidden">
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {STATS.map((s, i) => (
             <div key={s.label} data-reveal style={delay(i)} className="box p-7">
-              <p className="text-4xl font-black text-green sm:text-5xl">{s.count ? <CountUp to={s.count} suffix={s.suffix} /> : s.value}</p>
+              <p className="text-4xl font-black text-accent sm:text-5xl">{s.count ? <CountUp to={s.count} suffix={s.suffix} /> : s.value}</p>
               <p className="mt-3 text-sm leading-snug text-muted">{s.label}</p>
             </div>
           ))}
@@ -142,22 +142,22 @@ export default function Home() {
         <ul data-reveal-group className="grid sm:grid-cols-2 sm:gap-x-8">
           {SPECIALTIES.map((s, i) => (
             <li key={s} className="group flex items-baseline gap-4 border-b border-line py-4">
-              <span className="text-sm font-extrabold text-green">0{i + 1}</span>
-              <span className="text-2xl font-black lowercase text-white transition-all duration-300 group-hover:translate-x-2 group-hover:text-green">{s}</span>
+              <span className="text-sm font-extrabold text-accent">0{i + 1}</span>
+              <span className="text-2xl font-black lowercase text-fg transition-all duration-300 group-hover:translate-x-2 group-hover:text-accent">{s}</span>
             </li>
           ))}
         </ul>
       </section>
 
       {/* Partners */}
-      <section className="border-y border-line bg-black py-16">
+      <section className="border-y border-line band py-16">
         <p data-reveal className="text-center text-sm font-extrabold lowercase text-muted">
           trusted blending partner to leading fmcg and qsr brands
         </p>
         <div data-reveal className="mt-8">
           <Marquee
             items={PARTNERS}
-            itemClassName="flex items-center gap-4 pr-4 text-3xl font-black text-white/45 transition-colors hover:text-white after:ml-4 after:h-2 after:w-2 after:rounded-full after:bg-green after:content-['']"
+            itemClassName="flex items-center gap-4 pr-4 text-3xl font-black text-fg/45 transition-colors hover:text-fg after:ml-4 after:h-2 after:w-2 after:rounded-full after:bg-accent after:content-['']"
           />
         </div>
       </section>
@@ -171,14 +171,14 @@ export default function Home() {
         <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {CERTIFICATIONS.map((c) => (
             <div key={c.name} className="box p-6">
-              <p className="text-xl font-black text-white">{c.name}</p>
+              <p className="text-xl font-black text-fg">{c.name}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted">{c.detail}</p>
             </div>
           ))}
         </div>
-        <Link href="/quality" className="group mt-10 inline-flex items-center gap-2 font-extrabold text-white">
+        <Link href="/quality" className="group mt-10 inline-flex items-center gap-2 font-extrabold text-fg">
           quality &amp; safety at cbs
-          <span className="text-green transition-transform group-hover:translate-x-1">→</span>
+          <span className="text-accent transition-transform group-hover:translate-x-1">→</span>
         </Link>
       </section>
 

@@ -21,7 +21,7 @@ export default function ContactPage() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
         <div data-reveal className="box p-7 sm:p-10">
-          <h2 className="text-3xl font-black text-white">send us an enquiry</h2>
+          <h2 className="text-3xl font-black text-fg">send us an enquiry</h2>
           <span className="rule" />
           <p className="mt-5 text-muted">Fields marked * are required.</p>
           <div className="mt-8">
@@ -32,15 +32,15 @@ export default function ContactPage() {
         <div data-reveal-group className="space-y-4">
           <a href={mailLink()} className="box block p-7">
             <p className="eyebrow">email</p>
-            <p className="mt-2 break-all text-xl font-black text-white">{SITE.email}</p>
+            <p className="mt-2 break-all text-xl font-black text-fg">{SITE.email}</p>
           </a>
           <a href={telLink} className="box block p-7">
             <p className="eyebrow">phone</p>
-            <p className="mt-2 text-xl font-black text-white">{SITE.phone.display}</p>
+            <p className="mt-2 text-xl font-black text-fg">{SITE.phone.display}</p>
           </a>
           <div className="box p-7">
             <p className="eyebrow">facility</p>
-            <p className="mt-2 text-lg font-black leading-snug text-white">
+            <p className="mt-2 text-lg font-black leading-snug text-fg">
               {SITE.address.line1}
               <br />
               {SITE.address.line2}

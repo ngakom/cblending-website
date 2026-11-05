@@ -36,13 +36,13 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`group relative py-1 text-[15px] font-bold lowercase transition-colors hover:text-white ${
-                pathname === item.href ? "text-white" : "text-muted"
+              className={`group relative py-1 text-[15px] font-bold lowercase transition-colors hover:text-fg ${
+                pathname === item.href ? "text-fg" : "text-muted"
               }`}
             >
               {item.label}
               <span
-                className={`absolute -bottom-0.5 left-0 h-0.5 bg-green transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"}`}
+                className={`absolute -bottom-0.5 left-0 h-0.5 bg-accent transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"}`}
               />
             </Link>
           ))}
@@ -56,7 +56,7 @@ export default function Header() {
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="p-2 text-white lg:hidden"
+          className="p-2 text-fg lg:hidden"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             {open ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
@@ -71,7 +71,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`block border-b border-line py-3.5 text-lg font-bold lowercase ${pathname === item.href ? "text-green" : "text-white"}`}
+              className={`block border-b border-line py-3.5 text-lg font-bold lowercase ${pathname === item.href ? "text-accent" : "text-fg"}`}
             >
               {item.label}
             </Link>

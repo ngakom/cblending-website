@@ -30,12 +30,12 @@ export default function ServicesPage() {
         <div data-reveal-group className="mt-12 grid gap-6 md:grid-cols-2">
           {MODELS.map((m, i) => (
             <div key={m.title} className="box lift p-8">
-              <p className="text-5xl font-black text-green">0{i + 1}</p>
-              <h3 className="mt-4 text-2xl font-black lowercase text-white">{m.title}</h3>
+              <p className="text-5xl font-black text-accent">0{i + 1}</p>
+              <h3 className="mt-4 text-2xl font-black lowercase text-fg">{m.title}</h3>
               <ul className="mt-4 space-y-3 text-lg text-muted">
                 {m.points.map((p) => (
                   <li key={p} className="flex gap-3">
-                    <span className="mt-2.5 h-2 w-2 shrink-0 bg-green" />
+                    <span className="mt-2.5 h-2 w-2 shrink-0 bg-accent" />
                     {p}
                   </li>
                 ))}
@@ -61,8 +61,8 @@ export default function ServicesPage() {
               <p className="mt-6 text-lg leading-relaxed text-muted">{s.summary}</p>
               <ul className="mt-6 space-y-3">
                 {s.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-white/85">
-                    <span className="mt-1 text-green">→</span>
+                  <li key={p} className="flex gap-3 text-fg/85">
+                    <span className="mt-1 text-accent">→</span>
                     {p}
                   </li>
                 ))}
@@ -73,7 +73,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="border-y border-line bg-black py-20 lg:py-24">
+      <section className="border-y border-line band py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div data-reveal>
             <h2 className="heading">from concept to finished product</h2>
@@ -82,8 +82,8 @@ export default function ServicesPage() {
           <ol data-reveal-group className="mt-12 grid gap-4 md:grid-cols-4">
             {PROCESS.map((p, i) => (
               <li key={p.title} className="box lift p-7">
-                <span className="flex h-11 w-11 items-center justify-center border-2 border-green text-lg font-black text-green">{i + 1}</span>
-                <h3 className="mt-5 text-xl font-black lowercase text-white">{p.title}</h3>
+                <span className="flex h-11 w-11 items-center justify-center border-2 border-accent text-lg font-black text-accent">{i + 1}</span>
+                <h3 className="mt-5 text-xl font-black lowercase text-fg">{p.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{p.text}</p>
               </li>
             ))}
@@ -101,8 +101,8 @@ export default function ServicesPage() {
           <ul data-reveal-group className="mt-10">
             {SPECIALTIES.map((s, i) => (
               <li key={s} className="group flex items-baseline gap-4 border-b border-line py-3.5">
-                <span className="text-sm font-extrabold text-green">0{i + 1}</span>
-                <span className="text-xl font-black lowercase text-white transition-all duration-300 group-hover:translate-x-2 group-hover:text-green">{s}</span>
+                <span className="text-sm font-extrabold text-accent">0{i + 1}</span>
+                <span className="text-xl font-black lowercase text-fg transition-all duration-300 group-hover:translate-x-2 group-hover:text-accent">{s}</span>
               </li>
             ))}
           </ul>
@@ -115,8 +115,8 @@ export default function ServicesPage() {
           <ol data-reveal-group className="mt-10 space-y-4">
             {SKILLS.map((s, i) => (
               <li key={s} className="box flex items-center gap-4 p-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-green font-black text-green">{i + 1}</span>
-                <span className="font-semibold text-white">{s}</span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-accent font-black text-accent">{i + 1}</span>
+                <span className="font-semibold text-fg">{s}</span>
               </li>
             ))}
           </ol>

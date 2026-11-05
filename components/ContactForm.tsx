@@ -9,9 +9,9 @@ const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 const TOPICS = ["New product / blending enquiry", "Contract packing", "Supplier enquiry", "Careers", "Other"];
 
-const label = "mb-1.5 block text-sm font-bold lowercase text-white";
+const label = "mb-1.5 block text-sm font-bold lowercase text-fg";
 const field =
-  "w-full border border-line bg-night px-4 py-3 text-[15px] text-white outline-none transition-colors placeholder:text-muted/60 focus:border-green";
+  "w-full border border-line bg-white px-4 py-3 text-[15px] text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-accent";
 
 type Status = "idle" | "sending" | "sent" | "mailto" | "error";
 
@@ -50,7 +50,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="box p-8 text-center">
-        <p className="text-2xl font-black lowercase text-white">thank you — your enquiry has been sent.</p>
+        <p className="text-2xl font-black lowercase text-fg">thank you — your enquiry has been sent.</p>
         <p className="mt-2 text-muted">Our team will be in touch shortly.</p>
       </div>
     );

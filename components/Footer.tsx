@@ -5,7 +5,7 @@ import { SITE, mailLink, telLink } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-black">
+    <footer className="border-t border-line band">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] lg:px-10">
         <div>
           {/* Guidelines: on dark backgrounds the logo sits on a white panel. */}
@@ -19,11 +19,11 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-extrabold lowercase text-white">explore</p>
+          <p className="text-sm font-extrabold lowercase text-fg">explore</p>
           <ul className="mt-4 space-y-2.5">
             {[...NAV, { label: "Privacy Policy", href: "/privacy-policy" }].map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="lowercase text-muted transition-colors hover:text-green">
+                <Link href={item.href} className="lowercase text-muted transition-colors hover:text-accent">
                   {item.label}
                 </Link>
               </li>
@@ -32,15 +32,15 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-extrabold lowercase text-white">get in touch</p>
+          <p className="text-sm font-extrabold lowercase text-fg">get in touch</p>
           <ul className="mt-4 space-y-2.5 text-muted">
             <li>
-              <a href={mailLink()} className="transition-colors hover:text-green">
+              <a href={mailLink()} className="transition-colors hover:text-accent">
                 {SITE.email}
               </a>
             </li>
             <li>
-              <a href={telLink} className="transition-colors hover:text-green">
+              <a href={telLink} className="transition-colors hover:text-accent">
                 {SITE.phone.display}
               </a>
             </li>

@@ -45,7 +45,7 @@ export default function AboutPage() {
             <Image src="/images/team.jpg" alt="The CBS team" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover transition-transform duration-700 hover:scale-105" />
           </div>
           <div data-reveal className="box p-7">
-            <p className="text-xl font-black text-white">our goal</p>
+            <p className="text-xl font-black text-fg">our goal</p>
             <p className="mt-2 leading-relaxed text-muted">
               To deliver world-class service to our customers while empowering our employees and the communities around us.
             </p>
@@ -64,8 +64,8 @@ export default function AboutPage() {
         <ol data-reveal-group className="mt-12 grid gap-4 md:grid-cols-5">
           {JOURNEY.map((j) => (
             <li key={j.year} className="box lift p-6">
-              <p className="text-4xl font-black text-green">{j.year}</p>
-              <h3 className="mt-3 text-lg font-black lowercase text-white">{j.title}</h3>
+              <p className="text-4xl font-black text-accent">{j.year}</p>
+              <h3 className="mt-3 text-lg font-black text-fg">{j.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{j.text}</p>
             </li>
           ))}
@@ -84,7 +84,7 @@ export default function AboutPage() {
         <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
             <div key={v.title} className="box lift p-7">
-              <h3 className="text-2xl font-black lowercase text-white">{v.title}</h3>
+              <h3 className="text-2xl font-black lowercase text-fg">{v.title}</h3>
               <span className="rule !mt-4 !w-10" />
               <p className="mt-4 leading-relaxed text-muted">{v.text}</p>
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* Advantages */}
-      <section className="border-y border-line bg-black py-20 lg:py-24">
+      <section className="border-y border-line band py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div data-reveal>
             <h2 className="heading">why cbs</h2>
@@ -102,11 +102,11 @@ export default function AboutPage() {
           <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {ADVANTAGES.map((a) => (
               <div key={a.title} className="box p-7">
-                <h3 className="text-xl font-black lowercase text-white">{a.title}</h3>
+                <h3 className="text-xl font-black lowercase text-fg">{a.title}</h3>
                 <ul className="mt-4 space-y-2.5 text-muted">
                   {a.points.map((p) => (
                     <li key={p} className="flex gap-2.5">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-green" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-accent" />
                       {p}
                     </li>
                   ))}
@@ -126,14 +126,14 @@ export default function AboutPage() {
         <ul data-reveal-group className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {TEAM.map((t) => (
             <li key={t.name} className="box lift p-6 text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center border-2 border-green text-xl font-black text-green">
+              <span className="mx-auto flex h-16 w-16 items-center justify-center border-2 border-accent text-xl font-black text-accent">
                 {t.name
                   .split(" ")
                   .map((n) => n[0])
                   .join("")
                   .slice(0, 2)}
               </span>
-              <p className="mt-4 font-extrabold text-white">{t.name}</p>
+              <p className="mt-4 font-extrabold text-fg">{t.name}</p>
               <p className="text-sm text-muted">{t.role}</p>
             </li>
           ))}

@@ -17,8 +17,8 @@ export default function CallToAction({
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{text}</p>
         </div>
         <div className="box p-7">
-          <p className="text-sm font-extrabold lowercase text-white">start a conversation</p>
-          <a href={mailLink("Enquiry from the website")} className="mt-3 block break-all text-xl font-extrabold text-green hover:underline">
+          <p className="text-sm font-extrabold lowercase text-fg">start a conversation</p>
+          <a href={mailLink("Enquiry from the website")} className="mt-3 block break-all text-xl font-extrabold text-accent hover:underline">
             {SITE.email}
           </a>
           <div className="mt-6 flex flex-wrap gap-3">

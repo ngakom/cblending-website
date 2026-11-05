@@ -11,12 +11,12 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="mx-auto max-w-3xl px-5 py-16 lg:py-20">
       <p className="eyebrow">legal</p>
-      <h1 className="mt-3 text-4xl font-black text-white sm:text-5xl">privacy &amp; cookies policy</h1>
+      <h1 className="mt-3 text-4xl font-black text-fg sm:text-5xl">privacy &amp; cookies policy</h1>
       <span className="rule" />
-      <div className="mt-10 space-y-5 leading-relaxed text-white/80">
+      <div className="mt-10 space-y-5 leading-relaxed text-fg/80">
         {PRIVACY_POLICY.map((b, i) =>
           b.type === "h" ? (
-            <h2 key={i} className="pt-6 text-2xl font-black text-white">
+            <h2 key={i} className="pt-6 text-2xl font-black text-fg">
               {b.text}
             </h2>
           ) : b.type === "p" ? (

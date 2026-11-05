@@ -1,18 +1,42 @@
 @import "tailwindcss";
 
-/* Design B: dark, high-contrast layout (inspired by the client's reference) in the CBS palette.
-   Brand colours from the identity guidelines; night/panel are near-black tints of the primary teal. */
+/* Design B: the client's reference layout (full-bleed hero, outlined boxes, lowercase headings, square buttons)
+   in the CBS identity palette only: teal #00717D, green #00A18E, pale green #E6F7F0, dark text #1E293B, mid gray #64748B.
+   Light sections are white; .band sections are teal. Components read the context colours below, so the same
+   markup works in both. */
 :root {
   --teal: #00717d;
-  --teal-deep: #004f57;
+  --teal-deep: #005a63;
   --green: #00a18e;
   --pale: #e6f7f0;
   --ink: #1e293b;
   --slate: #64748b;
-  --night: #0b1517;
-  --panel: #12201f;
-  --muted: #a7b6b8;
-  --line: rgba(255, 255, 255, 0.14);
+
+  /* Context colours (light section). */
+  --night: #ffffff; /* section background */
+  --fg: var(--teal); /* headings and strong text */
+  --muted: var(--slate); /* supporting text */
+  --accent: var(--green); /* underlines, numbers, highlights */
+  --panel: var(--pale); /* box fill */
+  --line: rgba(0, 113, 125, 0.25); /* borders */
+  --btn-bg: var(--teal);
+  --btn-fg: #ffffff;
+  --btn-hover: var(--green);
+}
+
+/* Teal band: same components, inverted. */
+.band {
+  --night: var(--teal);
+  --fg: #ffffff;
+  --muted: rgba(230, 247, 240, 0.88);
+  --accent: var(--pale);
+  --panel: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.25);
+  --btn-bg: #ffffff;
+  --btn-fg: var(--teal);
+  --btn-hover: var(--pale);
+  background-color: var(--teal);
+  color: #ffffff;
 }
 
 @theme inline {
@@ -23,8 +47,10 @@
   --color-ink: var(--ink);
   --color-slate: var(--slate);
   --color-night: var(--night);
+  --color-fg: var(--fg);
   --color-panel: var(--panel);
   --color-muted: var(--muted);
+  --color-accent: var(--accent);
   --color-line: var(--line);
   --font-sans: var(--font-nunito);
 }
@@ -34,30 +60,31 @@ html {
 }
 
 body {
-  background: var(--night);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--ink);
   font-family: var(--font-nunito), system-ui, sans-serif;
 }
 
 @layer components {
   .eyebrow {
-    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-green;
+    @apply text-xs font-extrabold uppercase tracking-[0.22em] text-accent;
   }
   .heading {
-    @apply text-3xl font-black leading-[1.1] text-white sm:text-5xl;
+    @apply text-3xl font-black leading-[1.1] text-fg sm:text-5xl;
   }
-  /* Short green underline under headings; grows in when its section is revealed. */
+  /* Short underline under headings; grows in when its section is revealed. */
   .rule {
-    @apply mt-5 block h-1 w-16 origin-left bg-green;
+    @apply mt-5 block h-1 w-16 origin-left bg-accent;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-green px-6 py-3 text-sm font-extrabold text-night transition-colors hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 bg-[var(--btn-bg)] px-6 py-3 text-sm font-extrabold text-[var(--btn-fg)] transition-colors hover:bg-[var(--btn-hover)];
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border-2 border-white px-6 py-2.5 text-sm font-extrabold text-white transition-colors hover:bg-white hover:text-night;
+    @apply inline-flex items-center justify-center gap-2 border-2 border-fg px-6 py-2.5 text-sm font-extrabold text-fg transition-colors hover:bg-fg hover:text-night;
   }
+  /* Guidelines: pale green cards with teal borders. */
   .box {
-    @apply border border-line bg-panel/40 transition-colors hover:border-green/70;
+    @apply border border-line bg-panel transition-colors hover:border-accent;
   }
   .divider {
     @apply mx-auto max-w-7xl border-t border-line;

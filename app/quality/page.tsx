@@ -31,15 +31,15 @@ export default function QualityPage() {
         <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {CERTIFICATIONS.map((c) => (
             <div key={c.name} className="box lift p-6">
-              <span className="flex h-10 w-10 items-center justify-center bg-green text-lg font-black text-night"><Check /></span>
-              <h3 className="mt-5 text-xl font-black text-white">{c.name}</h3>
+              <span className="flex h-10 w-10 items-center justify-center bg-accent text-lg font-black text-night"><Check /></span>
+              <h3 className="mt-5 text-xl font-black text-fg">{c.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{c.detail}</p>
             </div>
           ))}
         </div>
         <div data-reveal className="box mt-6 p-7">
-          <p className="font-extrabold lowercase text-green">cbs is a certified vendor to</p>
-          <p className="mt-2 text-lg text-white">{CERTIFIED_VENDOR_TO.join(" · ")} · and many others</p>
+          <p className="font-extrabold lowercase text-accent">cbs is a certified vendor to</p>
+          <p className="mt-2 text-lg text-fg">{CERTIFIED_VENDOR_TO.join(" · ")} · and many others</p>
         </div>
       </section>
 
@@ -63,9 +63,9 @@ export default function QualityPage() {
           <ol data-reveal-group className="mt-10 space-y-4">
             {INTEGRITY.map((x, i) => (
               <li key={x.title} className="box flex gap-4 p-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-green font-black text-green">{i + 1}</span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-accent font-black text-accent">{i + 1}</span>
                 <span>
-                  <span className="block font-black lowercase text-white">{x.title}</span>
+                  <span className="block font-black lowercase text-fg">{x.title}</span>
                   <span className="text-muted">{x.text}</span>
                 </span>
               </li>
@@ -79,13 +79,13 @@ export default function QualityPage() {
       </section>
 
       {/* Health & safety */}
-      <section className="border-y border-line bg-black">
+      <section className="border-y border-line band">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1fr_1.3fr] lg:px-10 lg:py-24">
           <div data-reveal="zoom" className="box p-10 text-center">
-            <p className="text-7xl font-black text-green">
+            <p className="text-7xl font-black text-accent">
               <CountUp to={2000} suffix="+" />
             </p>
-            <p className="mt-3 text-lg lowercase text-white">days without an injury on duty (IOD)</p>
+            <p className="mt-3 text-lg text-fg">days without an injury on duty (IOD)</p>
           </div>
           <div>
             <div data-reveal>
@@ -94,8 +94,8 @@ export default function QualityPage() {
             </div>
             <ul data-reveal-group className="mt-10 space-y-3">
               {SAFETY.map((s) => (
-                <li key={s} className="flex gap-3 text-lg text-white/85">
-                  <span className="mt-1 text-green">→</span>
+                <li key={s} className="flex gap-3 text-lg text-fg/85">
+                  <span className="mt-1 text-accent">→</span>
                   {s}
                 </li>
               ))}
