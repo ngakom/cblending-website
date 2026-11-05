@@ -5,6 +5,7 @@ import CallToAction from "@/components/CallToAction";
 import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
 import { delay } from "@/lib/motion";
+import Check from "@/components/Check";
 import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
 
 const COMMITMENTS = [
@@ -41,7 +42,7 @@ export default function Home() {
             <ul className="mt-10 flex flex-wrap gap-2">
               {["FSSC 22000", "Halaal (SANHA · NIHT)", "Kosher", "SEDEX listed"].map((c) => (
                 <li key={c} className="rounded-full border border-teal/25 bg-white px-3.5 py-1.5 text-xs font-bold text-teal">
-                  ✓ {c}
+                  <Check className="inline -mt-0.5" /> {c}
                 </li>
               ))}
             </ul>
@@ -197,7 +198,7 @@ export default function Home() {
             <ul className="mt-8 space-y-4">
               {CERTIFICATIONS.map((c, i) => (
                 <li key={c.name} data-reveal="right" style={delay(i, 80)} className="card-white flex gap-4 p-5">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green text-sm font-extrabold text-white">✓</span>
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green text-sm font-extrabold text-white"><Check /></span>
                   <span>
                     <span className="block font-extrabold text-teal">{c.name}</span>
                     <span className="text-slate">{c.detail}</span>

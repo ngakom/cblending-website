@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
+import Check from "@/components/Check";
 import { MODELS, PROCESS, SERVICES, SKILLS, SPECIALTIES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function ServicesPage() {
                 <ul data-reveal-group className="mt-6 space-y-3">
                   {s.points.map((p) => (
                     <li key={p} className="flex gap-3 text-ink/85">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green text-xs font-extrabold text-white">✓</span>
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green text-xs font-extrabold text-white"><Check /></span>
                       {p}
                     </li>
                   ))}
