@@ -10,7 +10,7 @@ export default function CallToAction({
 }) {
   return (
     <section className="px-5 py-16 lg:px-10 lg:py-20">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-8 rounded-3xl bg-gradient-to-br from-teal to-teal-deep px-8 py-12 text-white sm:px-12 md:flex-row md:items-center md:justify-between">
+      <div data-reveal="zoom" className="mx-auto flex max-w-6xl flex-col items-start gap-8 rounded-3xl bg-gradient-to-br from-teal to-teal-deep px-8 py-12 text-white sm:px-12 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">{title}</h2>
           <p className="mt-3 text-lg leading-relaxed text-white/85">{text}</p>

@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import ScrollReveal from "@/components/ScrollReveal";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -31,12 +32,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${nunito.variable} h-full`}>
+    // suppressHydrationWarning: the inline script adds the "js" class before React hydrates.
+    <html lang="en" className={`${nunito.variable} h-full`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="flex min-h-full flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <ChatWidget />
+        <ScrollReveal />
       </body>
     </html>
   );

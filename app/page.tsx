@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import BusinessSchema from "@/components/BusinessSchema";
 import CallToAction from "@/components/CallToAction";
+import CountUp from "@/components/CountUp";
+import Marquee from "@/components/Marquee";
+import { delay } from "@/lib/motion";
 import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
 
 const COMMITMENTS = [
@@ -44,7 +47,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="relative">
+          <div className="relative" data-reveal="zoom">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-[0_30px_60px_rgba(0,79,87,0.25)]">
               <Image
                 src="/images/blending-operator.jpg"
@@ -52,15 +55,15 @@ export default function Home() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                className="ken-burns object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -left-4 hidden w-48 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:block lg:-left-10">
+            <div className="float absolute -bottom-8 -left-4 hidden w-48 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:block lg:-left-10">
               <div className="relative aspect-[4/3]">
                 <Image src="/images/laboratory.jpg" alt="Quality testing in the CBS laboratory" fill sizes="12rem" className="object-cover" />
               </div>
             </div>
-            <div className="card-white absolute left-4 top-4 max-w-[15rem] px-5 py-4 sm:left-auto sm:right-6 sm:-top-5">
+            <div style={{ animationDelay: "1.5s" }} className="float card-white absolute left-4 top-4 max-w-[15rem] px-5 py-4 sm:left-auto sm:right-6 sm:-top-5">
               <p className="text-2xl font-extrabold text-teal">Since 2018</p>
               <p className="text-xs font-bold text-slate">SA&apos;s first Black-owned contract blender</p>
             </div>
@@ -71,9 +74,9 @@ export default function Home() {
       {/* Stats */}
       <section className="bg-teal">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-12 text-white lg:grid-cols-4 lg:px-10">
-          {STATS.map((s) => (
-            <div key={s.label}>
-              <p className="text-4xl font-extrabold">{s.value}</p>
+          {STATS.map((s, i) => (
+            <div key={s.label} data-reveal style={delay(i)}>
+              <p className="text-4xl font-extrabold">{s.count ? <CountUp to={s.count} suffix={s.suffix} /> : s.value}</p>
               <p className="mt-1 text-sm leading-snug text-white/80">{s.label}</p>
             </div>
           ))}
@@ -82,10 +85,10 @@ export default function Home() {
 
       {/* Who we are */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-        <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem]" data-reveal="left">
           <Image src="/images/team-warehouse.jpg" alt="The CBS team in the warehouse" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
         </div>
-        <div>
+        <div data-reveal="right">
           <p className="eyebrow">Who we are</p>
           <h2 className="heading mt-3">Reducing complexity, risk and cost in the food value chain</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate">
@@ -106,13 +109,13 @@ export default function Home() {
       {/* Specialties */}
       <section className="bg-pale/60 py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <p className="eyebrow">Our specialties</p>
             <h2 className="heading mt-3">What we blend</h2>
           </div>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {SPECIALTIES.map((s, i) => (
-              <li key={s} className="card-white flex items-center gap-4 p-5">
+              <li key={s} data-reveal style={delay(i, 60)} className="card-white lift flex items-center gap-4 p-5">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-teal bg-pale text-sm font-extrabold text-teal">
                   {i + 1}
                 </span>
@@ -126,7 +129,7 @@ export default function Home() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-reveal>
             <p className="eyebrow">Our services</p>
             <h2 className="heading mt-3">From concept to finished, packed product</h2>
           </div>
@@ -135,8 +138,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s) => (
-            <Link key={s.id} href={`/services#${s.id}`} className="card-white group overflow-hidden">
+          {SERVICES.map((s, i) => (
+            <Link key={s.id} href={`/services#${s.id}`} data-reveal style={delay(i)} className="card-white lift group overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image src={s.image!} alt="" fill sizes="(min-width: 1024px) 22vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -152,11 +155,13 @@ export default function Home() {
       {/* Process */}
       <section className="bg-teal-deep py-20 text-white lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">How we work</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
+          <div data-reveal>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">How we work</p>
+            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
+          </div>
           <ol className="mt-12 grid gap-6 md:grid-cols-4">
             {PROCESS.map((p, i) => (
-              <li key={p.title} className="relative rounded-2xl border border-white/15 bg-white/5 p-6">
+              <li key={p.title} data-reveal style={delay(i, 120)} className="relative rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:bg-white/10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-pale text-lg font-extrabold text-pale">{i + 1}</span>
                 <h3 className="mt-5 text-xl font-extrabold">{p.title}</h3>
                 <p className="mt-2 leading-relaxed text-white/75">{p.text}</p>
@@ -167,30 +172,31 @@ export default function Home() {
       </section>
 
       {/* Partners */}
-      <section className="mx-auto max-w-7xl px-5 py-20 text-center lg:px-10 lg:py-24">
-        <p className="eyebrow">Our partners</p>
-        <h2 className="heading mt-3">Trusted blending partner to leading FMCG and QSR brands</h2>
-        <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {PARTNERS.map((p) => (
-            <li key={p} className="card flex h-24 items-center justify-center px-4 text-xl font-extrabold text-teal">
-              {p}
-            </li>
-          ))}
-        </ul>
+      <section className="py-20 text-center lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10" data-reveal>
+          <p className="eyebrow">Our partners</p>
+          <h2 className="heading mt-3">Trusted blending partner to leading FMCG and QSR brands</h2>
+        </div>
+        <div className="mt-12 space-y-4" data-reveal>
+          <Marquee items={PARTNERS.slice(0, 5)} itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
+          <Marquee items={PARTNERS.slice(5)} reverse itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
+        </div>
       </section>
 
       {/* Quality */}
       <section className="bg-pale/60">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1fr_1.2fr] lg:px-10 lg:py-24">
-          <div className="relative mx-auto aspect-[2/3] w-full max-w-sm overflow-hidden rounded-[2rem]">
+          <div className="relative mx-auto aspect-[2/3] w-full max-w-sm overflow-hidden rounded-[2rem]" data-reveal="left">
             <Image src="/images/ribbon-blender.jpg" alt="A stainless steel double helix ribbon blender" fill sizes="24rem" className="object-cover" />
           </div>
           <div>
-            <p className="eyebrow">Quality &amp; food safety</p>
-            <h2 className="heading mt-3">Living a food safety culture is our highest priority</h2>
+            <div data-reveal>
+              <p className="eyebrow">Quality &amp; food safety</p>
+              <h2 className="heading mt-3">Living a food safety culture is our highest priority</h2>
+            </div>
             <ul className="mt-8 space-y-4">
-              {CERTIFICATIONS.map((c) => (
-                <li key={c.name} className="card-white flex gap-4 p-5">
+              {CERTIFICATIONS.map((c, i) => (
+                <li key={c.name} data-reveal="right" style={delay(i, 80)} className="card-white flex gap-4 p-5">
                   <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green text-sm font-extrabold text-white">✓</span>
                   <span>
                     <span className="block font-extrabold text-teal">{c.name}</span>
@@ -208,13 +214,13 @@ export default function Home() {
 
       {/* Confidentiality */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl" data-reveal>
           <p className="eyebrow">Our commitment</p>
           <h2 className="heading mt-3">Confidentiality you can rely on</h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {COMMITMENTS.map((c, i) => (
-            <div key={c.title} className="card p-7">
+            <div key={c.title} data-reveal style={delay(i, 120)} className="card lift p-7">
               <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-teal bg-white font-extrabold text-teal">{i + 1}</span>
               <h3 className="mt-5 text-xl font-extrabold text-teal">{c.title}</h3>
               <p className="mt-2 leading-relaxed text-ink/80">{c.text}</p>

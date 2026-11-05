@@ -22,11 +22,11 @@ export default function QualityPage() {
 
       {/* Certifications */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <p className="eyebrow">Certifications &amp; accreditation</p>
-        <h2 className="heading mt-3">Independently certified and audited</h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <p data-reveal className="eyebrow">Certifications &amp; accreditation</p>
+        <h2 data-reveal className="heading mt-3">Independently certified and audited</h2>
+        <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {CERTIFICATIONS.map((c) => (
-            <div key={c.name} className="card p-6">
+            <div key={c.name} className="card lift p-6">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal text-lg font-extrabold text-white">✓</span>
               <h3 className="mt-5 text-xl font-extrabold text-teal">{c.name}</h3>
               <p className="mt-2 leading-relaxed text-ink/80">{c.detail}</p>
@@ -43,19 +43,19 @@ export default function QualityPage() {
       <section className="bg-pale/60">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
           <div className="grid grid-cols-2 gap-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+            <div data-reveal="zoom" className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image src="/images/quality-check.jpg" alt="Quality checks at CBS" fill sizes="(min-width: 1024px) 22vw, 50vw" className="object-cover" />
             </div>
-            <div className="relative mt-10 aspect-[4/5] overflow-hidden rounded-3xl">
+            <div data-reveal="zoom" className="relative mt-10 aspect-[4/5] overflow-hidden rounded-3xl">
               <Image src="/images/sensory-tasting.jpg" alt="Sensory evaluation in the CBS laboratory" fill sizes="(min-width: 1024px) 22vw, 50vw" className="object-cover" />
             </div>
           </div>
           <div>
-            <p className="eyebrow">Brand integrity &amp; food safety</p>
-            <h2 className="heading mt-3">Why it matters</h2>
-            <ol className="mt-8 space-y-4">
+            <p data-reveal className="eyebrow">Brand integrity &amp; food safety</p>
+            <h2 data-reveal className="heading mt-3">Why it matters</h2>
+            <ol data-reveal-group className="mt-8 space-y-4">
               {INTEGRITY.map((x, i) => (
-                <li key={x.title} className="card-white flex gap-4 p-5">
+                <li key={x.title} className="card-white lift flex gap-4 p-5">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-teal bg-pale font-extrabold text-teal">{i + 1}</span>
                   <span>
                     <span className="block font-extrabold text-teal">{x.title}</span>
@@ -79,9 +79,9 @@ export default function QualityPage() {
           <p className="mt-2 text-lg text-white/85">days without an injury on duty (IOD)</p>
         </div>
         <div>
-          <p className="eyebrow">Health &amp; safety</p>
-          <h2 className="heading mt-3">Safe people, safe products</h2>
-          <ul className="mt-8 space-y-3">
+          <p data-reveal className="eyebrow">Health &amp; safety</p>
+          <h2 data-reveal className="heading mt-3">Safe people, safe products</h2>
+          <ul data-reveal-group className="mt-8 space-y-3">
             {SAFETY.map((s) => (
               <li key={s} className="flex gap-3 text-lg text-ink/85">
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green text-xs font-extrabold text-white">✓</span>

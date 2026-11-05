@@ -20,7 +20,7 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
-        <div className="card-white p-7 sm:p-10">
+        <div data-reveal className="card-white p-7 sm:p-10">
           <h2 className="text-2xl font-extrabold text-teal">Send us an enquiry</h2>
           <p className="mt-2 text-slate">Fields marked * are required.</p>
           <div className="mt-8">
@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="space-y-5">
+        <div data-reveal-group className="space-y-5">
           <a href={mailLink()} className="card block p-7 transition-colors hover:bg-pale/70">
             <p className="eyebrow">Email</p>
             <p className="mt-2 break-all text-xl font-extrabold text-teal">{SITE.email}</p>

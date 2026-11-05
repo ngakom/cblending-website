@@ -23,11 +23,11 @@ export default function ServicesPage() {
 
       {/* Supply models */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
-        <p className="eyebrow">How we can work together</p>
-        <h2 className="heading mt-3">Two supply models</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <p data-reveal className="eyebrow">How we can work together</p>
+        <h2 data-reveal className="heading mt-3">Two supply models</h2>
+        <div data-reveal-group className="mt-10 grid gap-6 md:grid-cols-2">
           {MODELS.map((m, i) => (
-            <div key={m.title} className="card p-8">
+            <div key={m.title} className="card lift p-8">
               <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-teal bg-white font-extrabold text-teal">{i + 1}</span>
               <h3 className="mt-5 text-2xl font-extrabold text-teal">{m.title}</h3>
               <ul className="mt-4 space-y-3 text-lg text-ink/80">
@@ -52,10 +52,10 @@ export default function ServicesPage() {
                 <Image src={s.image!} alt="" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
               </div>
               <div>
-                <p className="eyebrow">0{i + 1}</p>
-                <h2 className="heading mt-2">{s.title}</h2>
+                <p data-reveal className="eyebrow">0{i + 1}</p>
+                <h2 data-reveal className="heading mt-2">{s.title}</h2>
                 <p className="mt-4 text-lg leading-relaxed text-slate">{s.summary}</p>
-                <ul className="mt-6 space-y-3">
+                <ul data-reveal-group className="mt-6 space-y-3">
                   {s.points.map((p) => (
                     <li key={p} className="flex gap-3 text-ink/85">
                       <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green text-xs font-extrabold text-white">✓</span>
@@ -72,9 +72,9 @@ export default function ServicesPage() {
       {/* Specialties + skills */}
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-2 lg:px-10 lg:py-24">
         <div>
-          <p className="eyebrow">Our specialties</p>
-          <h2 className="heading mt-3">Precision dry blends</h2>
-          <ul className="mt-8 grid grid-cols-2 gap-3">
+          <p data-reveal className="eyebrow">Our specialties</p>
+          <h2 data-reveal className="heading mt-3">Precision dry blends</h2>
+          <ul data-reveal-group className="mt-8 grid grid-cols-2 gap-3">
             {SPECIALTIES.map((s) => (
               <li key={s} className="card px-5 py-4 font-bold text-teal">
                 {s}
@@ -83,11 +83,11 @@ export default function ServicesPage() {
           </ul>
         </div>
         <div>
-          <p className="eyebrow">Specialist skills</p>
-          <h2 className="heading mt-3">Built for every project size</h2>
-          <ol className="mt-8 space-y-4">
+          <p data-reveal className="eyebrow">Specialist skills</p>
+          <h2 data-reveal className="heading mt-3">Built for every project size</h2>
+          <ol data-reveal-group className="mt-8 space-y-4">
             {SKILLS.map((s, i) => (
-              <li key={s} className="card-white flex items-center gap-4 p-5">
+              <li key={s} className="card-white lift flex items-center gap-4 p-5">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-teal bg-pale font-extrabold text-teal">{i + 1}</span>
                 <span className="font-semibold text-ink">{s}</span>
               </li>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">B2B solution strategy</p>
           <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">How CBS supports you from concept to finished product</h2>
-          <ol className="mt-12 grid gap-6 md:grid-cols-4">
+          <ol data-reveal-group className="mt-12 grid gap-6 md:grid-cols-4">
             {PROCESS.map((p, i) => (
               <li key={p.title} className="rounded-2xl border border-white/15 bg-white/5 p-6">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-pale text-lg font-extrabold text-pale">{i + 1}</span>

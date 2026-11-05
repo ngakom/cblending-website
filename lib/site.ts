@@ -29,11 +29,12 @@ export const CERTIFICATIONS = [
   { name: "SGS & SEDEX", detail: "SGS Responsible Sourcing Audit with zero findings. SEDEX listed." },
 ];
 
-export const STATS = [
+// `count` makes the number count up on screen; the rest show `value` as is.
+export const STATS: { value: string; label: string; count?: number; suffix?: string }[] = [
   { value: "2018", label: "Founded as South Africa's first Black-owned contract blender" },
   { value: "Level 1", label: "B-BBEE contributor" },
-  { value: "4", label: "Industrial double helix ribbon blenders" },
-  { value: "2,000+", label: "Days without an injury on duty" },
+  { value: "4", count: 4, label: "Industrial double helix ribbon blenders" },
+  { value: "2,000+", count: 2000, suffix: "+", label: "Days without an injury on duty" },
 ];
 
 export const SPECIALTIES = [
