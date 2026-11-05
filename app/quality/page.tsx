@@ -3,6 +3,7 @@ import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import CountUp from "@/components/CountUp";
 import PageHero from "@/components/PageHero";
+import Check from "@/components/Check";
 import { CERTIFICATIONS, CERTIFIED_VENDOR_TO, INTEGRITY, SAFETY } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function QualityPage() {
         <div data-reveal-group className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {CERTIFICATIONS.map((c) => (
             <div key={c.name} className="box lift p-6">
-              <span className="flex h-10 w-10 items-center justify-center bg-green text-lg font-black text-night">✓</span>
+              <span className="flex h-10 w-10 items-center justify-center bg-green text-lg font-black text-night"><Check /></span>
               <h3 className="mt-5 text-xl font-black text-white">{c.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{c.detail}</p>
             </div>
