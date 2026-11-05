@@ -23,7 +23,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-b from-pale via-pale/50 to-white">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:py-20">
           <div className="fade-up">
-            <p className="eyebrow">Proudly South African · Level 1 B‑BBEE</p>
+            <p className="eyebrow">Proudly South African · Level 1 <span className="whitespace-nowrap">B-BBEE</span></p>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] text-teal sm:text-5xl lg:text-[3.4rem]">
               Precision dry blending for leading food &amp; beverage brands
             </h1>
