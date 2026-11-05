@@ -37,7 +37,7 @@ export default function Home() {
         <Image src="/images/blending-operator.jpg" alt="" fill priority sizes="100vw" className="ken-burns -z-10 object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night/70 via-night/55 to-night" />
         <div className="mx-auto flex max-w-4xl flex-col items-center px-5 py-24 text-center">
-          <p className="fade-up eyebrow">proudly south african · level 1 b‑bbee</p>
+          <p className="fade-up eyebrow">proudly south african · level 1 <span className="whitespace-nowrap">b-bbee</span></p>
           <h1 className="fade-up mt-5 text-5xl font-black leading-[1.02] text-white sm:text-7xl" style={{ animationDelay: "120ms" }}>
             precision blending for the brands you love
           </h1>
