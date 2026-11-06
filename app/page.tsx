@@ -24,7 +24,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:py-20">
           <div className="fade-up">
             <p className="eyebrow">Proudly South African · Level 1 <span className="whitespace-nowrap">B-BBEE</span></p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] text-teal sm:text-5xl lg:text-[3.4rem]">
+            <h1 className="mt-4 text-4xl font-black leading-[1.1] text-teal sm:text-5xl lg:text-[3.4rem]">
               Precision dry blending for leading food &amp; beverage brands
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
@@ -158,7 +158,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div data-reveal>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">How we work</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
+            <h2 className="mt-3 max-w-2xl text-3xl font-black leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
           </div>
           <ol className="mt-12 grid gap-6 md:grid-cols-4">
             {PROCESS.map((p, i) => (

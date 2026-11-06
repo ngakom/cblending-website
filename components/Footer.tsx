@@ -23,13 +23,13 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5">
             {NAV.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="font-semibold text-white/90 transition-colors hover:text-white">
+                <Link href={item.href} className="font-semibold lowercase text-white/90 transition-colors hover:text-white">
                   {item.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/privacy-policy" className="font-semibold text-white/90 transition-colors hover:text-white">
+              <Link href="/privacy-policy" className="font-semibold lowercase text-white/90 transition-colors hover:text-white">
                 Privacy Policy
               </Link>
             </li>

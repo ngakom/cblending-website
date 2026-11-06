@@ -32,21 +32,28 @@ body {
   font-family: var(--font-nunito), system-ui, sans-serif;
 }
 
+/* Client request: lowercase headings and buttons, like the CBS identity guidelines. */
+h1,
+h2,
+h3 {
+  text-transform: lowercase;
+}
+
 @layer components {
   .eyebrow {
     @apply text-xs font-extrabold uppercase tracking-[0.2em] text-green;
   }
   .heading {
-    @apply text-3xl font-extrabold leading-tight text-teal sm:text-4xl;
+    @apply text-3xl font-black leading-tight text-teal sm:text-4xl;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(0,113,125,0.25)] transition-all hover:-translate-y-0.5 hover:bg-teal-deep;
+    @apply inline-flex items-center justify-center gap-2 rounded-full lowercase bg-teal px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(0,113,125,0.25)] transition-all hover:-translate-y-0.5 hover:bg-teal-deep;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal px-6 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-full lowercase border-2 border-teal px-6 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white;
   }
   .btn-light {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-teal transition-all hover:-translate-y-0.5 hover:bg-pale;
+    @apply inline-flex items-center justify-center gap-2 rounded-full lowercase bg-white px-6 py-3 text-sm font-bold text-teal transition-all hover:-translate-y-0.5 hover:bg-pale;
   }
   /* Guidelines: pale green cards with teal borders for grouped content. */
   .card {

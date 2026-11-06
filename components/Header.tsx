@@ -16,7 +16,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-t-[6px] border-teal border-b border-b-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5 lg:px-10">
         <Link href="/" aria-label={`${SITE.name} home`} className="shrink-0">
-          <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} priority className="h-14 w-auto sm:h-16" />
+          <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} priority className={`w-auto transition-all ${pathname === "/" ? "h-20 sm:h-24" : "h-16 sm:h-[4.5rem]"}`} />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
@@ -24,7 +24,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-[15px] font-bold transition-colors hover:text-teal ${pathname === item.href ? "text-teal" : "text-ink"}`}
+              className={`text-[15px] font-bold lowercase transition-colors hover:text-teal ${pathname === item.href ? "text-teal" : "text-ink"}`}
             >
               {item.label}
             </Link>
@@ -54,7 +54,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`block border-b border-line py-3.5 text-lg font-bold ${pathname === item.href ? "text-teal" : "text-ink"}`}
+              className={`block border-b border-line py-3.5 text-lg font-bold lowercase ${pathname === item.href ? "text-teal" : "text-ink"}`}
             >
               {item.label}
             </Link>
