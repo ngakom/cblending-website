@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Collaborative Blending Solutions",
   },
   description:
-    "Collaborative Blending Solutions (CBS) is a Level 1 B-BBEE, FSSC 22000 certified contract manufacturer of dry blended food solutions in Midrand, South Africa — fortification mixes, hot chocolates, powdered drinks, seasonings and custom formulations.",
+    "Collaborative Blending Solutions (CBS) is a Level 2 B-BBEE, FSSC 22000 certified contract manufacturer of dry blended food solutions in Midrand, South Africa — fortification mixes, hot chocolates, powdered drinks, seasonings and custom formulations.",
   openGraph: {
     type: "website",
     siteName: SITE.name,

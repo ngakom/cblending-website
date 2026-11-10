@@ -2,9 +2,9 @@ import { CERTIFIED_VENDOR_TO, CERTIFICATIONS, JOURNEY, MODELS, PARTNERS, SERVICE
 
 const contact = `email ${SITE.email}, call ${SITE.phone.display}, or use the enquiry form on the Contact page`;
 
-export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 1 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.line1}, ${SITE.address.line2} (an ${SITE.facility}).
+export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.line1}, ${SITE.address.line2} (an ${SITE.facility}).
 
-About: Founded in ${SITE.founded} as South Africa's first Black-owned contract blending manufacturer, born from a partnership to reduce complexity, risk and cost in the value chain. CBS is 51% owned by Black shareholders employed by CoSo, with CoSo as a minority shareholder and mentor; through CoSo / PortionPack Group, CBS is part of the Südzucker Group.
+About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo is a shareholder and mentor; through CoSo / PortionPack Group, CBS is part of the Südzucker Group.
 
 Journey:
 ${JOURNEY.map((j) => `- ${j.year}: ${j.title} — ${j.text}`).join("\n")}
@@ -38,8 +38,8 @@ const FAQ: { keywords: string[]; answer: string }[] = [
     answer: `Pricing, capacity and lead times depend on your product, volumes and packaging. Please share those details and our team will prepare a proposal — ${contact}.`,
   },
   {
-    keywords: ["fssc", "certif", "halaal", "halal", "kosher", "audit", "sedex", "bbbee", "b-bbee", "bee"],
-    answer: `CBS is FSSC 22000 certified, Halaal accredited (SANHA and NIHT) and Kosher accredited. We are a Level 1 B-BBEE contributor, SEDEX listed, with an SGS Responsible Sourcing Audit of zero findings.`,
+    keywords: ["fssc", "certif", "halaal", "halal", "kosher", "audit", "bbbee", "b-bbee", "bee"],
+    answer: `CBS is FSSC 22000 certified, Halaal accredited (SANHA and NIHT) and Kosher accredited. We are a Level 2 B-BBEE contributor.`,
   },
   {
     keywords: ["blend", "make", "manufactur", "product", "special", "seasoning", "chocolate", "drink", "sweetener", "fortif"],
@@ -63,7 +63,7 @@ const FAQ: { keywords: string[]; answer: string }[] = [
   },
   {
     keywords: ["about", "history", "founded", "owned", "coso", "who are"],
-    answer: `CBS was founded in ${SITE.founded} as South Africa's first Black-owned contract blending manufacturer. We are part of the Südzucker Group through our partnership with CoSo / PortionPack Group.`,
+    answer: `CBS was founded in ${SITE.founded} in Midrand, Gauteng. We are part of the Südzucker Group through our partnership with CoSo / PortionPack Group.`,
   },
 ];
 

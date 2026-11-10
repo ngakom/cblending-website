@@ -7,7 +7,7 @@ import { CERTIFICATIONS, CERTIFIED_VENDOR_TO, INTEGRITY, SAFETY } from "@/lib/si
 
 export const metadata: Metadata = {
   title: "Quality & Safety",
-  description: "FSSC 22000 certified, Halaal (SANHA, NIHT) and Kosher accredited, SEDEX listed — food safety and health & safety at CBS.",
+  description: "FSSC 22000 certified, Halaal (SANHA, NIHT) and Kosher accredited — food safety and health & safety at CBS.",
   alternates: { canonical: "/quality" },
 };
 

@@ -25,14 +25,13 @@ export const CERTIFICATIONS = [
   { name: "FSSC 22000", detail: "Certified since 2019 — world-class food safety systems." },
   { name: "Halaal", detail: "Accredited by SANHA and the National Independent Halaal Trust (NIHT)." },
   { name: "Kosher", detail: "Kosher accredited." },
-  { name: "Level 1 B-BBEE", detail: "South Africa's first Black-owned contract blending manufacturer." },
-  { name: "SGS & SEDEX", detail: "SGS Responsible Sourcing Audit with zero findings. SEDEX listed." },
+  { name: "Level 2 B-BBEE", detail: "A Level 2 B-BBEE contributor." },
 ];
 
 // `count` makes the number count up on screen; the rest show `value` as is.
 export const STATS: { value: string; label: string; count?: number; suffix?: string }[] = [
-  { value: "2018", label: "Founded as South Africa's first Black-owned contract blender" },
-  { value: "Level 1", label: "B-BBEE contributor" },
+  { value: "2018", label: "Founded in Midrand, Gauteng" },
+  { value: "Level 2", label: "B-BBEE contributor" },
   { value: "4", count: 4, label: "Industrial double helix ribbon blenders" },
   { value: "2,000+", count: 2000, suffix: "+", label: "Days without an injury on duty" },
 ];
@@ -46,11 +45,12 @@ export const SPECIALTIES = [
   "Packs for the Beverage Industry",
   "Sweet & Savoury Blends",
   "Custom Formulations",
+  "Downpacking",
 ];
 
-export const PARTNERS = ["Nestlé", "Kellogg", "Tiger Brands", "Unilever", "Mondelēz", "Mars", "Nando's", "Clover", "Futurelife", "McDonald's"];
+export const PARTNERS = ["Nestlé", "Kellogg", "Tiger Brands", "Clover", "Cubbs", "Promasidor", "CRB", "Oceana", "Aldor", "Lactalis"];
 
-export const CERTIFIED_VENDOR_TO = ["Nestlé", "Kellogg", "Tiger Brands", "Ciro", "Entyce", "Slo-Jo", "Aldor"];
+export const CERTIFIED_VENDOR_TO = ["Nestlé", "Kellogg", "Tiger Brands", "Ciro", "Entyce", "Aldor"];
 
 export type Service = { id: string; title: string; summary: string; points: string[]; image?: string };
 
@@ -65,7 +65,7 @@ export const SERVICES: Service[] = [
       "Gentle, fluid agitation with typical blending times of 10 to 20 minutes.",
       "Strategic partnerships for unique raw material sourcing, with quality and laboratory services.",
     ],
-    image: "/images/ribbon-blender.jpg",
+    image: "/images/ribbon-agitator-tank.jpg",
   },
   {
     id: "sensory",
@@ -158,20 +158,22 @@ export const VALUES = [
 ];
 
 export const JOURNEY = [
-  { year: "2018", title: "Inception", text: "CBS is founded as South Africa's first Black-owned contract blending manufacturer, born from a partnership to reduce complexity, risk and cost in the value chain." },
+  { year: "2018", title: "Inception", text: "CBS is founded as a contract blending manufacturer, born from a partnership to reduce complexity, risk and cost in the value chain." },
   { year: "2019", title: "FSSC 22000", text: "Achieved FSSC 22000 certification, establishing world-class food safety systems." },
   { year: "2021", title: "New Plant & Growth", text: "Commissioned a new plant for Tiger Brands and expanded into seasoning blending." },
   { year: "2022", title: "Facilities Upgrade", text: "Upgraded ablution facilities to further enhance hygiene and employee welfare standards." },
-  { year: "2023", title: "QSR Expansion", text: "Began blending for Quick Service Restaurants, including McDonald's, alongside continued work for major FMCG clients." },
+  { year: "2023", title: "QSR Expansion", text: "Began blending for Quick Service Restaurants, alongside continued work for major FMCG clients." },
 ];
 
 export const TEAM = [
-  { name: "KG Sekwaila", role: "Director" },
-  { name: "Corlia Pieterse", role: "Operations Manager" },
-  { name: "Aaron Mablo", role: "Production Lead" },
-  { name: "Khensani Matjila", role: "QA / HSE Lead" },
-  { name: "Kwena Kgony", role: "Warehouse Lead" },
-  { name: "Manoto", role: "Supervisor" },
+  { name: "Kgaugelo Sekwaila", role: "Director" },
+  { name: "Dawid Muller", role: "Director" },
+  { name: "Corlia", role: "Operations Manager" },
+  { name: "Aaron", role: "Production Lead" },
+  { name: "Khensani", role: "QA / HSE Lead" },
+  { name: "Kwena", role: "Warehouse Lead" },
+  { name: "Sydney", role: "Warehouse Coordinator" },
+  { name: "Manoko", role: "Supervisor" },
 ];
 
 export const SAFETY = [

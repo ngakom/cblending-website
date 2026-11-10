@@ -75,7 +75,7 @@ export default function ServicesPage() {
         <div>
           <p data-reveal className="eyebrow">Our specialties</p>
           <h2 data-reveal className="heading mt-3">Precision dry blends</h2>
-          <ul data-reveal-group className="mt-8 grid grid-cols-2 gap-3">
+          <ul data-reveal-group className="mt-8 grid grid-cols-2 gap-3 [&>li:last-child:nth-child(odd)]:col-span-2">
             {SPECIALTIES.map((s) => (
               <li key={s} className="card px-5 py-4 font-bold text-teal">
                 {s}

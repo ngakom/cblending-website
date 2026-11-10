@@ -6,7 +6,7 @@ import { ADVANTAGES, JOURNEY, TEAM, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "South Africa's first Black-owned contract blending manufacturer — our story, values, journey and team.",
+  description: "Collaborative Blending Solutions, a Level 2 B-BBEE contract blending manufacturer — our story, values, journey and team.",
   alternates: { canonical: "/about" },
 };
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About CBS"
         title="Sustainable transformation in the food manufacturing value chain"
-        intro="A Level 1 B-BBEE business combining lower cost and risk for our customers with real, shareholder-led economic transformation."
+        intro="A Level 2 B-BBEE business combining lower cost and risk for our customers with real, shareholder-led economic transformation."
         image="/images/team-warehouse.jpg"
       />
 
@@ -26,14 +26,14 @@ export default function AboutPage() {
           <p data-reveal className="eyebrow">Who we are</p>
           <h2 data-reveal className="heading">Born from partnership</h2>
           <p>
-            CBS is a Level 1 Black Economic Empowered business that was born out of a need to reduce complexity, risk and cost in the value
-            chain of manufacturing certain products for one of our key customers. Together we built a business plan that resulted in the
-            first Black-owned contract blending manufacturer in South Africa — one that truly represents sustainable transformation, with
+            CBS is a Level 2 B-BBEE business that was born out of a need to reduce complexity, risk and cost in the value
+            chain of manufacturing certain products for one of our key customers. Together we built a business plan that resulted in a
+            contract blending manufacturer that truly represents sustainable transformation, with
             its shareholders directly involved in the day-to-day running of the business.
           </p>
           <p>
             CBS was selected by the AVI board as the winner of a joint Corporate Social Investment project, which provided start-up capital.
-            CBS is 51% owned by Black shareholders employed by CoSo, with CoSo as a minority shareholder assisting as mentor — and through
+            CoSo is a shareholder assisting as mentor and, through
             our partnership with CoSo / PortionPack Group, we are a proud part of the Südzucker Group.
           </p>
           <p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
         <p data-reveal className="eyebrow">Meet the team</p>
         <h2 data-reveal className="heading mt-3">The people behind every blend</h2>
-        <ul data-reveal-group className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <ul data-reveal-group className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           {TEAM.map((t) => (
             <li key={t.name} className="card-white lift p-6 text-center">
               <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-pale text-xl font-extrabold text-teal">

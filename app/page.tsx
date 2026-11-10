@@ -23,7 +23,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-b from-pale via-pale/50 to-white">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:py-20">
           <div className="fade-up">
-            <p className="eyebrow">Proudly South African · Level 1 <span className="whitespace-nowrap">B-BBEE</span></p>
+            <p className="eyebrow">Proudly South African · Level 2 <span className="whitespace-nowrap">B-BBEE</span></p>
             <h1 className="mt-4 text-4xl font-black leading-[1.1] text-teal sm:text-5xl lg:text-[3.4rem]">
               Precision dry blending for leading food &amp; beverage brands
             </h1>
@@ -40,7 +40,7 @@ export default function Home() {
               </Link>
             </div>
             <ul className="mt-10 flex flex-wrap gap-2">
-              {["FSSC 22000", "Halaal (SANHA · NIHT)", "Kosher", "SEDEX listed"].map((c) => (
+              {["FSSC 22000", "Halaal (SANHA · NIHT)", "Kosher", "Level 2 B-BBEE"].map((c) => (
                 <li key={c} className="rounded-full border border-teal/25 bg-white px-3.5 py-1.5 text-xs font-bold text-teal">
                   <Check className="inline -mt-0.5" /> {c}
                 </li>
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
             <div style={{ animationDelay: "1.5s" }} className="float card-white absolute left-4 top-4 max-w-[15rem] px-5 py-4 sm:left-auto sm:right-6 sm:-top-5">
               <p className="text-2xl font-extrabold text-teal">Since 2018</p>
-              <p className="text-xs font-bold text-slate">SA&apos;s first Black-owned contract blender</p>
+              <p className="text-xs font-bold text-slate">Precision dry blending in Midrand</p>
             </div>
           </div>
         </div>
@@ -94,8 +94,7 @@ export default function Home() {
           <h2 className="heading mt-3">Reducing complexity, risk and cost in the food value chain</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate">
             CBS was born out of a need to reduce complexity, risk and cost in manufacturing for one of our key customers. Together we built
-            the first Black-owned contract blending manufacturer in South Africa — with shareholders directly involved in the day-to-day
-            running of the business.
+            a contract blending manufacturer with shareholders directly involved in the day-to-day running of the business.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate">
             Today we blend sweet and savoury products for leading FMCG and Quick Service Restaurant brands, as part of the Südzucker Group
@@ -114,7 +113,7 @@ export default function Home() {
             <p className="eyebrow">Our specialties</p>
             <h2 className="heading mt-3">What we blend</h2>
           </div>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SPECIALTIES.map((s, i) => (
               <li key={s} data-reveal style={delay(i, 60)} className="card-white lift flex items-center gap-4 p-5">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-teal bg-pale text-sm font-extrabold text-teal">
@@ -188,7 +187,7 @@ export default function Home() {
       <section className="bg-pale/60">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1fr_1.2fr] lg:px-10 lg:py-24">
           <div className="relative mx-auto aspect-[2/3] w-full max-w-sm overflow-hidden rounded-[2rem]" data-reveal="left">
-            <Image src="/images/ribbon-blender.jpg" alt="A stainless steel double helix ribbon blender" fill sizes="24rem" className="object-cover" />
+            <Image src="/images/ribbon-agitator-tank.jpg" alt="A stainless steel tank with a ribbon agitator" fill sizes="24rem" className="object-cover" />
           </div>
           <div>
             <div data-reveal>

@@ -13,7 +13,7 @@ export default function Footer() {
             <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} className="h-16 w-auto" />
           </span>
           <p className="mt-5 max-w-sm leading-relaxed text-white/80">
-            A proudly South African, Level 1 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
+            A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
             Kosher accredited.
           </p>
         </div>
