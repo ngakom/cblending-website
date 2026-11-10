@@ -3,9 +3,9 @@
 import { useState, type FormEvent } from "react";
 import { SITE } from "@/lib/site";
 
-// Web3Forms delivers submissions to the inbox the access key was created for (it should be SITE.email).
+// Web3Forms delivers submissions to the inbox the access key was created for (enquiries@cblending.co.za, set up 2026-11-10).
 // The key is public by design. Without one, the form opens the visitor's email app instead.
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "8d0a51d0-0fd7-40f5-9dfe-7f15e820895a";
 
 const TOPICS = ["New product / blending enquiry", "Contract packing", "Supplier enquiry", "Careers", "Other"];
 
