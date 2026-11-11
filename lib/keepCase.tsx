@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from "react";
 
 // The site is styled all-lowercase (client request), except these names, which keep their capitals.
-const KEEP = /(FSSC 22000|Halaal|Kosher|Quick Service Restaurants?)/;
+const KEEP = /(FSSC 22000|Halaal|Kosher|Quick Service Restaurants?|QSR)/;
 
 export function keepCase(text: string): ReactNode {
   const parts = text.split(KEEP);

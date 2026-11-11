@@ -180,7 +180,7 @@ export default function Home() {
       <section className="py-20 text-center lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10" data-reveal>
           <p className="eyebrow">Our partners</p>
-          <h2 className="heading mt-3">Trusted blending partner to leading FMCG and QSR brands</h2>
+          <h2 className="heading mt-3">Trusted blending partner to leading FMCG and <span className="normal-case">QSR</span> brands</h2>
         </div>
         <div className="mt-12 space-y-4" data-reveal>
           <Marquee items={PARTNERS.slice(0, 5)} itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
