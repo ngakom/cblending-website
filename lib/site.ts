@@ -172,9 +172,9 @@ export const TEAM = [
   { name: "Kgaugelo Sekwaila", role: "Director & Co-Founder" },
   { name: "Dawid Muller", role: "Director" },
   { name: "Corlia Pieterse", role: "Operations Manager" },
-  { name: "Aaron Mablo", role: "Production Lead" },
-  { name: "Khensani Matjila", role: "QA / HSE Lead" },
-  { name: "Kwena Kgony", role: "Warehouse Lead" },
+  { name: "Aarone Makola", role: "Production Lead" },
+  { name: "Khensani Matjebe", role: "QA / HSE Lead" },
+  { name: "Kwena Kgowa", role: "Warehouse Lead" },
   { name: "Sydney Sekgogoba", role: "Warehouse Coordinator" },
   { name: "Manoko Monyebodi", role: "Supervisor" },
 ];

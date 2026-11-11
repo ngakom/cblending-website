@@ -130,14 +130,15 @@ export default function AboutPage() {
         <ul data-reveal-group className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           {TEAM.map((t) => (
             <li key={t.name} className="card-white lift p-6 text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-pale text-xl font-extrabold text-teal">
+              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-pale text-xl font-extrabold normal-case text-teal">
                 {t.name
                   .split(" ")
                   .map((n) => n[0])
                   .join("")
                   .slice(0, 2)}
               </span>
-              <p className="mt-4 font-extrabold text-ink">{t.name}</p>
+              {/* Client request: people's names keep their capitals on the otherwise lowercase site. */}
+              <p className="mt-4 font-extrabold normal-case text-ink">{t.name}</p>
               <p className="text-sm text-slate">{t.role}</p>
             </li>
           ))}
