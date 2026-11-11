@@ -7,7 +7,8 @@ import Marquee from "@/components/Marquee";
 import { delay } from "@/lib/motion";
 import Check from "@/components/Check";
 import { keepCase } from "@/lib/keepCase";
-import { CERTIFICATIONS, PARTNER, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
+import PartnerName from "@/components/PartnerName";
+import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
 
 const COMMITMENTS = [
   { title: "Customer alignment", text: "We place immense value on our customer relationships and take an uncompromising approach to confidentiality and integrity." },
@@ -98,12 +99,8 @@ export default function Home() {
             a contract blending manufacturer with shareholders directly involved in the day-to-day running of the business.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate">
-            Today we blend sweet and savoury products for leading FMCG and <span className="normal-case">Quick Service Restaurant</span> brands, as part of the Südzucker Group
-            through our partnership with{" "}
-            <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
-              CoSo
-            </a>{" "}
-            / PortionPack Group.
+            Today we blend sweet and savoury products for leading FMCG and <span className="normal-case">Quick Service Restaurant</span> brands
+            through our partnership with <PartnerName />.
           </p>
           <Link href="/about" className="btn-secondary mt-8">
             More about CBS
@@ -150,7 +147,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-extrabold leading-snug text-teal">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{s.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate">{keepCase(s.summary)}</p>
               </div>
             </Link>
           ))}
@@ -169,7 +166,7 @@ export default function Home() {
               <li key={p.title} data-reveal style={delay(i, 120)} className="relative rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:bg-white/10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-pale text-lg font-extrabold text-pale">{i + 1}</span>
                 <h3 className="mt-5 text-xl font-extrabold">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-white/75">{p.text}</p>
+                <p className="mt-2 leading-relaxed text-white/75">{keepCase(p.text)}</p>
               </li>
             ))}
           </ol>

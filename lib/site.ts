@@ -19,7 +19,7 @@ export const SITE = {
 };
 
 // Partner company (requested by KG): linked from the footer badge and the "partnership with CoSo" text.
-export const PARTNER = { name: "CoSo", fullName: "Collaborative Packing Solutions", url: "https://coso.co.za" };
+export const PARTNER = { name: "CoSo", group: "PortionPack Group", url: "https://coso.co.za" };
 
 export const telLink = `tel:+${SITE.phone.intl}`;
 export const mailLink = (subject?: string) => `mailto:${SITE.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
@@ -94,7 +94,7 @@ export const SERVICES: Service[] = [
   {
     id: "logistics",
     title: "Logistics & Distribution",
-    summary: "Finished products delivered to CoSo or your designated distribution centre.",
+    summary: "Finished products delivered to CoSo, a company of PortionPack Group, or your designated distribution centre.",
     points: [
       "CBS aligns with your infrastructure and contracts an outsourced distribution partner.",
       "Products are palletised and shrink-wrapped for dispatch.",
@@ -122,8 +122,8 @@ export const MODELS = [
 
 export const PROCESS = [
   { title: "Develop & Blend", text: "CBS develops and blends the product — fortification mixes, seasonings, powdered drinks and more." },
-  { title: "Pack & Portion", text: "Packing and portioning in partnership, aligned with CoSo capabilities." },
-  { title: "Logistics", text: "Distribution to the customer or CoSo designated centres." },
+  { title: "Pack & Portion", text: "Packing and portioning in partnership with CoSo, a company of PortionPack Group." },
+  { title: "Logistics", text: "Distribution to the customer or to designated centres of CoSo, a company of PortionPack Group." },
   { title: "Market Readiness", text: "Support for market readiness and customer mobility." },
 ];
 

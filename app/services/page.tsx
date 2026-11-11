@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { keepCase } from "@/lib/keepCase";
 import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
@@ -55,7 +56,7 @@ export default function ServicesPage() {
               <div>
                 <p data-reveal className="eyebrow">0{i + 1}</p>
                 <h2 data-reveal className="heading mt-2">{s.title}</h2>
-                <p className="mt-4 text-lg leading-relaxed text-slate">{s.summary}</p>
+                <p className="mt-4 text-lg leading-relaxed text-slate">{keepCase(s.summary)}</p>
                 <ul data-reveal-group className="mt-6 space-y-3">
                   {s.points.map((p) => (
                     <li key={p} className="flex gap-3 text-ink/85">
@@ -107,7 +108,7 @@ export default function ServicesPage() {
               <li key={p.title} className="rounded-2xl border border-white/15 bg-white/5 p-6">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-pale text-lg font-extrabold text-pale">{i + 1}</span>
                 <h3 className="mt-5 text-xl font-extrabold">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-white/75">{p.text}</p>
+                <p className="mt-2 leading-relaxed text-white/75">{keepCase(p.text)}</p>
               </li>
             ))}
           </ol>

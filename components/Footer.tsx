@@ -24,7 +24,9 @@ export default function Footer() {
           >
             <span className="text-xs font-bold tracking-[0.15em] text-white/60">in partnership with</span>
             <span className="mt-0.5 inline-flex items-center gap-1.5 font-extrabold text-white">
-              {PARTNER.name} · {PARTNER.fullName}
+              <span className="normal-case">
+                {PARTNER.name}, a company of {PARTNER.group}
+              </span>
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                 <path d="M7 17 17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

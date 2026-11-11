@@ -4,7 +4,7 @@ const contact = `email ${SITE.email}, call ${SITE.phone.display}, or use the enq
 
 export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.lines.join(", ")} (an ${SITE.facility}).
 
-About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo is a shareholder and mentor; through CoSo / PortionPack Group, CBS is part of the Südzucker Group.
+About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo, a company of PortionPack Group, is a shareholder and mentor. PortionPack Group's parent company is the Südzucker Group.
 
 Journey:
 ${JOURNEY.map((j) => `- ${j.year}: ${j.title} — ${j.text}`).join("\n")}
@@ -63,7 +63,7 @@ const FAQ: { keywords: string[]; answer: string }[] = [
   },
   {
     keywords: ["about", "history", "founded", "owned", "coso", "who are"],
-    answer: `CBS was founded in ${SITE.founded} in Midrand, Gauteng. We are part of the Südzucker Group through our partnership with CoSo / PortionPack Group.`,
+    answer: `CBS was founded in ${SITE.founded} in Midrand, Gauteng. We work in partnership with CoSo, a company of PortionPack Group.`,
   },
 ];
 

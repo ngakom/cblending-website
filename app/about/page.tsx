@@ -3,7 +3,8 @@ import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
 import { keepCase } from "@/lib/keepCase";
-import { ADVANTAGES, PARTNER, JOURNEY, TEAM, VALUES } from "@/lib/site";
+import PartnerName from "@/components/PartnerName";
+import { ADVANTAGES, JOURNEY, TEAM, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -33,13 +34,8 @@ export default function AboutPage() {
             its shareholders directly involved in the day-to-day running of the business.
           </p>
           <p>
-            CBS was selected by the AVI board as the winner of a joint Corporate Social Investment project, which provided start-up capital.
-            CoSo is a shareholder assisting as mentor and, through
-            our partnership with{" "}
-            <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
-              CoSo
-            </a>{" "}
-            / PortionPack Group, we are a proud part of the Südzucker Group.
+            CBS was selected by the AVI board as the winner of a joint Corporate Social Investment project, which provided start-up capital.{" "}
+            <PartnerName />, is a shareholder, assisting as mentor.
           </p>
           <p>
             Our long-term partnerships with blue-chip customers have enabled us to develop our employees into highly qualified
@@ -82,13 +78,12 @@ export default function AboutPage() {
       {/* Values */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
         <p data-reveal className="eyebrow">Our values</p>
-        <h2 data-reveal className="heading mt-3 max-w-3xl">Aligned with the principles of the Südzucker Group</h2>
+        <h2 data-reveal className="heading mt-3 max-w-3xl">Aligned with the principles of the <span className="normal-case">Südzucker Group</span>
+        </h2>
         <p data-reveal className="mt-4 max-w-3xl text-lg leading-relaxed text-slate">
-          Through our partnership with{" "}
-          <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
-            CoSo
-          </a>
-          , a member of PortionPack Group, we share the values of the Südzucker Group, the parent company of PortionPack Group.
+          Through our partnership with <PartnerName />, we share the values of the{" "}
+          <span className="normal-case">Südzucker Group</span>, the parent company of{" "}
+          <span className="normal-case">PortionPack Group</span>.
         </p>
         <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
