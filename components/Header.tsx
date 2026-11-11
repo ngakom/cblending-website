@@ -16,7 +16,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-t-[6px] border-teal border-b border-b-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2.5 lg:px-10">
         <Link href="/" aria-label={`${SITE.name} home`} className="shrink-0">
-          <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} priority className={`w-auto transition-all ${pathname === "/" ? "h-20 sm:h-24" : "h-16 sm:h-[4.5rem]"}`} />
+          <Image src="/images/logo-cbs.png" alt={SITE.name} width={1040} height={974} priority className={`w-auto transition-all ${pathname === "/" ? "h-20 sm:h-24" : "h-16 sm:h-[4.5rem]"}`} />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">

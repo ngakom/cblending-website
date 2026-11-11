@@ -9,7 +9,7 @@ export default function BusinessSchema() {
     legalName: SITE.legalName,
     alternateName: SITE.shortName,
     url: SITE.url,
-    logo: `${SITE.url}/images/logo.png`,
+    logo: `${SITE.url}/images/logo-cbs.png`,
     email: SITE.email,
     telephone: `+${SITE.phone.intl}`,
     foundingDate: String(SITE.founded),

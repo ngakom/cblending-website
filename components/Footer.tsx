@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
           {/* Guidelines: on dark backgrounds the logo sits on a white panel. */}
           <span className="inline-block rounded-xl bg-white p-3">
-            <Image src="/images/logo.png" alt={SITE.name} width={482} height={442} className="h-16 w-auto" />
+            <Image src="/images/logo-cbs.png" alt={SITE.name} width={1040} height={974} className="h-16 w-auto" />
           </span>
           <p className="mt-5 max-w-sm leading-relaxed text-white/80">
             A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
