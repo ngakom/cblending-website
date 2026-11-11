@@ -176,7 +176,7 @@ export const TEAM = [
   { name: "Khensani Matjebe", role: "QA / HSE Lead" },
   { name: "Kwena Kgowa", role: "Warehouse Lead" },
   { name: "Sydney Sekgogoba", role: "Warehouse Coordinator" },
-  { name: "Manoko Monyebodi", role: "Supervisor" },
+  { name: "Manoko Monyebodi", role: "Production Coordinator" },
 ];
 
 export const SAFETY = [
