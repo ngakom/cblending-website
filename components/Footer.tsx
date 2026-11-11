@@ -9,8 +9,8 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] lg:px-10">
         <div>
           {/* Guidelines: on dark backgrounds the logo sits on a white panel. */}
-          <span className="inline-block rounded-xl bg-white p-3">
-            <Image src="/images/logo-cbs.png" alt={SITE.name} width={1040} height={974} className="h-16 w-auto" />
+          <span className="inline-block rounded-2xl bg-white p-4">
+            <Image src="/images/logo-cbs.png" alt={SITE.name} width={1040} height={974} className="h-28 w-auto" />
           </span>
           <p className="mt-5 max-w-sm leading-relaxed text-white/80">
             A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
@@ -58,9 +58,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Guidelines: website footer line on every page. */}
+      {/* Guidelines: website footer line on every page. Extra bottom/right padding keeps it clear of the chat button. */}
       <div className="border-t border-white/15">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-sm text-white/70 sm:flex-row sm:justify-between lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pt-5 pb-24 text-sm text-white/70 sm:flex-row sm:justify-between sm:pb-5 sm:pr-64 lg:px-10 lg:pr-64">
           <p>
             {SITE.name.toLowerCase()} &nbsp;|&nbsp; www.cblending.co.za
           </p>
