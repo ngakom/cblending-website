@@ -166,12 +166,12 @@ export const JOURNEY = [
 ];
 
 export const TEAM = [
-  { name: "Kgaugelo Sekwaila", role: "Director" },
+  { name: "Kgaugelo Sekwaila", role: "Director & Co-Founder" },
   { name: "Dawid Muller", role: "Director" },
-  { name: "Corlia", role: "Operations Manager" },
-  { name: "Aaron", role: "Production Lead" },
-  { name: "Khensani", role: "QA / HSE Lead" },
-  { name: "Kwena", role: "Warehouse Lead" },
+  { name: "Corlia Pieterse", role: "Operations Manager" },
+  { name: "Aaron Mablo", role: "Production Lead" },
+  { name: "Khensani Matjila", role: "QA / HSE Lead" },
+  { name: "Kwena Kgony", role: "Warehouse Lead" },
   { name: "Sydney", role: "Warehouse Coordinator" },
   { name: "Manoko", role: "Supervisor" },
 ];
