@@ -3,7 +3,7 @@ import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
 import { keepCase } from "@/lib/keepCase";
-import { ADVANTAGES, JOURNEY, TEAM, VALUES } from "@/lib/site";
+import { ADVANTAGES, PARTNER, JOURNEY, TEAM, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -35,7 +35,11 @@ export default function AboutPage() {
           <p>
             CBS was selected by the AVI board as the winner of a joint Corporate Social Investment project, which provided start-up capital.
             CoSo is a shareholder assisting as mentor and, through
-            our partnership with CoSo / PortionPack Group, we are a proud part of the Südzucker Group.
+            our partnership with{" "}
+            <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
+              CoSo
+            </a>{" "}
+            / PortionPack Group, we are a proud part of the Südzucker Group.
           </p>
           <p>
             Our long-term partnerships with blue-chip customers have enabled us to develop our employees into highly qualified

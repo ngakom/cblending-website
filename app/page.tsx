@@ -7,7 +7,7 @@ import Marquee from "@/components/Marquee";
 import { delay } from "@/lib/motion";
 import Check from "@/components/Check";
 import { keepCase } from "@/lib/keepCase";
-import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
+import { CERTIFICATIONS, PARTNER, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
 
 const COMMITMENTS = [
   { title: "Customer alignment", text: "We place immense value on our customer relationships and take an uncompromising approach to confidentiality and integrity." },
@@ -99,7 +99,11 @@ export default function Home() {
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate">
             Today we blend sweet and savoury products for leading FMCG and <span className="normal-case">Quick Service Restaurant</span> brands, as part of the Südzucker Group
-            through our partnership with CoSo / PortionPack Group.
+            through our partnership with{" "}
+            <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
+              CoSo
+            </a>{" "}
+            / PortionPack Group.
           </p>
           <Link href="/about" className="btn-secondary mt-8">
             More about CBS

@@ -18,6 +18,9 @@ export const SITE = {
   founded: 2018,
 };
 
+// Partner company (requested by KG): linked from the footer badge and the "partnership with CoSo" text.
+export const PARTNER = { name: "CoSo", fullName: "Collaborative Packing Solutions", url: "https://coso.co.za" };
+
 export const telLink = `tel:+${SITE.phone.intl}`;
 export const mailLink = (subject?: string) => `mailto:${SITE.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
 

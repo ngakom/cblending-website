@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NAV } from "@/lib/nav";
-import { SITE, mailLink, telLink } from "@/lib/site";
+import { PARTNER, SITE, mailLink, telLink } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -16,6 +16,20 @@ export default function Footer() {
             A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. <span className="normal-case">FSSC 22000</span> certified, <span className="normal-case">Halaal</span>{" "}
             and <span className="normal-case">Kosher</span> accredited.
           </p>
+          <a
+            href={PARTNER.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex flex-col rounded-xl border border-white/25 px-4 py-3 transition-colors hover:border-white/60 hover:bg-white/5"
+          >
+            <span className="text-xs font-bold tracking-[0.15em] text-white/60">in partnership with</span>
+            <span className="mt-0.5 inline-flex items-center gap-1.5 font-extrabold text-white">
+              {PARTNER.name} · {PARTNER.fullName}
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          </a>
         </div>
 
         <div>
