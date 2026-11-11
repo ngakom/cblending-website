@@ -10,8 +10,8 @@ export const SITE = {
   email: "enquiries@cblending.co.za",
   phone: { display: "010 021 5554", intl: "27100215554" },
   address: {
-    line1: "Unit 15, MIFA Industrial Park",
-    line2: "399 George Street, Randjespark, Midrand",
+    // Layout confirmed by the client (2026-11-11): one item per line.
+    lines: ["399 George Street", "Unit 15", "Mifa Industrial Park", "Midrand"],
     mapQuery: "MIFA Industrial Park, 399 George Street, Randjespark, Midrand",
   },
   facility: "840 m² FSSC 22000 certified facility",

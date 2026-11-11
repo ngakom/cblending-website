@@ -2,7 +2,7 @@ import { CERTIFIED_VENDOR_TO, CERTIFICATIONS, JOURNEY, MODELS, PARTNERS, SERVICE
 
 const contact = `email ${SITE.email}, call ${SITE.phone.display}, or use the enquiry form on the Contact page`;
 
-export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.line1}, ${SITE.address.line2} (an ${SITE.facility}).
+export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.lines.join(", ")} (an ${SITE.facility}).
 
 About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo is a shareholder and mentor; through CoSo / PortionPack Group, CBS is part of the Südzucker Group.
 
@@ -55,7 +55,7 @@ const FAQ: { keywords: string[]; answer: string }[] = [
   },
   {
     keywords: ["where", "address", "location", "located", "visit"],
-    answer: `We are at ${SITE.address.line1}, ${SITE.address.line2}. There's a map on our Contact page.`,
+    answer: `We are at ${SITE.address.lines.join(", ")}. There's a map on our Contact page.`,
   },
   {
     keywords: ["start", "project", "contact", "email", "phone", "call", "enquir", "reach"],

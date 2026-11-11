@@ -5,7 +5,7 @@ import { SITE, mailLink, telLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact Collaborative Blending Solutions — ${SITE.email}, ${SITE.phone.display}, ${SITE.address.line1}, Midrand.`,
+  description: `Contact Collaborative Blending Solutions — ${SITE.email}, ${SITE.phone.display}, ${SITE.address.lines.join(", ")}.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -40,9 +40,11 @@ export default function ContactPage() {
           <div className="card p-7">
             <p className="eyebrow">Facility</p>
             <p className="mt-2 text-lg font-extrabold leading-snug text-teal">
-              {SITE.address.line1}
-              <br />
-              {SITE.address.line2}
+              {SITE.address.lines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
             </p>
           </div>
         </div>

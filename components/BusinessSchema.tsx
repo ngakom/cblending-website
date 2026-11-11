@@ -15,7 +15,7 @@ export default function BusinessSchema() {
     foundingDate: String(SITE.founded),
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${SITE.address.line1}, 399 George Street`,
+      streetAddress: SITE.address.lines.slice(0, 3).join(", "),
       addressLocality: "Midrand",
       addressRegion: "Gauteng",
       addressCountry: "ZA",

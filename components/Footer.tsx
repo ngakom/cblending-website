@@ -64,9 +64,11 @@ export default function Footer() {
               </a>
             </li>
             <li className="leading-relaxed">
-              {SITE.address.line1}
-              <br />
-              {SITE.address.line2}
+              {SITE.address.lines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
             </li>
           </ul>
         </div>
