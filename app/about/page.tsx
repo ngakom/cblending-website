@@ -83,6 +83,13 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-24">
         <p data-reveal className="eyebrow">Our values</p>
         <h2 data-reveal className="heading mt-3 max-w-3xl">Aligned with the principles of the Südzucker Group</h2>
+        <p data-reveal className="mt-4 max-w-3xl text-lg leading-relaxed text-slate">
+          Through our partnership with{" "}
+          <a href={PARTNER.url} target="_blank" rel="noopener noreferrer" className="font-bold text-teal underline underline-offset-2 hover:text-green">
+            CoSo
+          </a>
+          , a member of PortionPack Group, we share the values of the Südzucker Group, the parent company of PortionPack Group.
+        </p>
         <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
             <div key={v.title} className="card lift p-7">
