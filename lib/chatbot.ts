@@ -4,7 +4,7 @@ const contact = `email ${SITE.email}, call ${SITE.phone.display}, or use the enq
 
 export const SYSTEM_PROMPT = `You are the website assistant for ${SITE.legalName} (CBS), a proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions, based at ${SITE.address.lines.join(", ")} (an ${SITE.facility}).
 
-About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo, a company of PortionPack Group, is a shareholder and mentor. PortionPack Group's parent company is the Südzucker Group.
+About: Founded in ${SITE.founded}, born from a partnership to reduce complexity, risk and cost in the value chain. CoSo is a shareholder and mentor; through CoSo, a company of PortionPack Group, CBS is part of the Südzucker Group.
 
 Journey:
 ${JOURNEY.map((j) => `- ${j.year}: ${j.title} — ${j.text}`).join("\n")}

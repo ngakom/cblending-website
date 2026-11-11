@@ -122,7 +122,7 @@ export const MODELS = [
 
 export const PROCESS = [
   { title: "Develop & Blend", text: "CBS develops and blends the product — fortification mixes, seasonings, powdered drinks and more." },
-  { title: "Pack & Portion", text: "Packing and portioning in partnership with CoSo, a company of PortionPack Group." },
+  { title: "Pack & Portion", text: "Packing and portioning in partnership, aligned with the capabilities of CoSo, a company of PortionPack Group." },
   { title: "Logistics", text: "Distribution to the customer or to designated centres of CoSo, a company of PortionPack Group." },
   { title: "Market Readiness", text: "Support for market readiness and customer mobility." },
 ];
