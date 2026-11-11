@@ -183,8 +183,8 @@ export default function Home() {
           <h2 className="heading mt-3">Trusted blending partner to leading FMCG and <span className="normal-case">QSR</span> brands</h2>
         </div>
         <div className="mt-12 space-y-4" data-reveal>
-          <Marquee items={PARTNERS.slice(0, 5)} itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
-          <Marquee items={PARTNERS.slice(5)} reverse itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold text-teal" />
+          <Marquee items={PARTNERS.slice(0, 5)} itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold normal-case text-teal" />
+          <Marquee items={PARTNERS.slice(5)} reverse itemClassName="card flex h-20 min-w-48 items-center justify-center px-8 text-xl font-extrabold normal-case text-teal" />
         </div>
       </section>
 

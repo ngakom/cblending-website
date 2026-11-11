@@ -37,7 +37,9 @@ export default function QualityPage() {
         </div>
         <div className="card-white mt-8 p-7">
           <p className="font-extrabold text-teal">CBS is a certified vendor to</p>
-          <p className="mt-2 text-lg text-ink/85">{CERTIFIED_VENDOR_TO.join(" · ")} · and many others</p>
+          <p className="mt-2 text-lg text-ink/85">
+            <span className="normal-case">{CERTIFIED_VENDOR_TO.join(" · ")}</span> · and many others
+          </p>
         </div>
       </section>
 
