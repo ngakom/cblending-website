@@ -13,13 +13,13 @@ export default function Footer() {
             <Image src="/images/logo-cbs.png" alt={SITE.name} width={1040} height={974} className="h-28 w-auto" />
           </span>
           <p className="mt-5 max-w-sm leading-relaxed text-white/80">
-            A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. FSSC 22000 certified, Halaal and
-            Kosher accredited.
+            A proudly South African, Level 2 B-BBEE contract manufacturer of dry blended food solutions. <span className="normal-case">FSSC 22000</span> certified, <span className="normal-case">Halaal</span>{" "}
+            and <span className="normal-case">Kosher</span> accredited.
           </p>
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/60">Explore</p>
+          <p className="text-sm font-extrabold lowercase tracking-[0.18em] text-white/60">Explore</p>
           <ul className="mt-4 space-y-2.5">
             {NAV.map((item) => (
               <li key={item.href}>
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/60">Contact</p>
+          <p className="text-sm font-extrabold lowercase tracking-[0.18em] text-white/60">Contact</p>
           <ul className="mt-4 space-y-2.5 text-white/90">
             <li>
               <a href={mailLink()} className="font-semibold hover:text-white">

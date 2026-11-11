@@ -100,7 +100,7 @@ export default function ServicesPage() {
       {/* Process */}
       <section className="bg-teal-deep py-20 text-white lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">B2B solution strategy</p>
+          <p className="text-xs font-extrabold lowercase tracking-[0.2em] text-pale">B2B solution strategy</p>
           <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">How CBS supports you from concept to finished product</h2>
           <ol data-reveal-group className="mt-12 grid gap-6 md:grid-cols-4">
             {PROCESS.map((p, i) => (

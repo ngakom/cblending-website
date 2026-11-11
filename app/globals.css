@@ -32,16 +32,26 @@ body {
   font-family: var(--font-nunito), system-ui, sans-serif;
 }
 
-/* Client request: lowercase headings and buttons, like the CBS identity guidelines. */
-h1,
-h2,
-h3 {
+/* Client request: the whole site in lowercase, like the CBS logo. Certification names keep their capitals
+   via keepCase() / .normal-case; typed form fields, the privacy policy and chat messages stay as typed. */
+body {
   text-transform: lowercase;
+}
+
+input,
+textarea {
+  text-transform: none;
+}
+
+/* Tailwind preflight resets select/button to none; follow the page instead. */
+select,
+button {
+  text-transform: inherit;
 }
 
 @layer components {
   .eyebrow {
-    @apply text-xs font-extrabold uppercase tracking-[0.2em] text-green;
+    @apply text-xs font-extrabold lowercase tracking-[0.2em] text-green;
   }
   .heading {
     @apply text-3xl font-black leading-tight text-teal sm:text-4xl;

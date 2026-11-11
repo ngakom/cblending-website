@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
+import { keepCase } from "@/lib/keepCase";
 import { ADVANTAGES, JOURNEY, TEAM, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -66,8 +67,8 @@ export default function AboutPage() {
               <li key={j.year} className="relative">
                 <span className="absolute -left-[2.6rem] top-1 h-5 w-5 rounded-full border-4 border-pale bg-teal" />
                 <p className="text-sm font-extrabold text-green">{j.year}</p>
-                <h3 className="text-xl font-extrabold text-teal">{j.title}</h3>
-                <p className="mt-1 leading-relaxed text-slate">{j.text}</p>
+                <h3 className="text-xl font-extrabold text-teal">{keepCase(j.title)}</h3>
+                <p className="mt-1 leading-relaxed text-slate">{keepCase(j.text)}</p>
               </li>
             ))}
           </ol>
@@ -81,7 +82,7 @@ export default function AboutPage() {
         <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
             <div key={v.title} className="card lift p-7">
-              <h3 className="text-lg font-extrabold uppercase tracking-wide text-teal">{v.title}</h3>
+              <h3 className="text-lg font-extrabold lowercase tracking-wide text-teal">{v.title}</h3>
               <p className="mt-3 leading-relaxed text-ink/80">{v.text}</p>
             </div>
           ))}
@@ -91,7 +92,7 @@ export default function AboutPage() {
       {/* Advantages */}
       <section className="bg-teal-deep py-20 text-white lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">Why CBS</p>
+          <p className="text-xs font-extrabold lowercase tracking-[0.2em] text-pale">Why CBS</p>
           <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Our competitive advantages</h2>
           <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {ADVANTAGES.map((a) => (
@@ -101,7 +102,7 @@ export default function AboutPage() {
                   {a.points.map((p) => (
                     <li key={p} className="flex gap-2.5">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-green" />
-                      {p}
+                      {keepCase(p)}
                     </li>
                   ))}
                 </ul>

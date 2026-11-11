@@ -90,7 +90,7 @@ export default function ChatWidget() {
             </button>
           </div>
 
-          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4" aria-live="polite">
+          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4 normal-case" aria-live="polite">
             {messages.map((m, i) => (
               <p
                 key={i}

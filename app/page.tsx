@@ -6,6 +6,7 @@ import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
 import { delay } from "@/lib/motion";
 import Check from "@/components/Check";
+import { keepCase } from "@/lib/keepCase";
 import { CERTIFICATIONS, PARTNERS, PROCESS, SERVICES, SPECIALTIES, STATS } from "@/lib/site";
 
 const COMMITMENTS = [
@@ -29,7 +30,7 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
               Collaborative Blending Solutions is a contract manufacturer of dry blended food solutions — from fortification mixes and hot
-              chocolates to seasonings and custom formulations — made in our FSSC 22000 certified facility.
+              chocolates to seasonings and custom formulations — made in our <span className="normal-case">FSSC 22000</span> certified facility.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">
@@ -42,7 +43,7 @@ export default function Home() {
             <ul className="mt-10 flex flex-wrap gap-2">
               {["FSSC 22000", "Halaal (SANHA · NIHT)", "Kosher", "Level 2 B-BBEE"].map((c) => (
                 <li key={c} className="rounded-full border border-teal/25 bg-white px-3.5 py-1.5 text-xs font-bold text-teal">
-                  <Check className="inline -mt-0.5" /> {c}
+                  <Check className="inline -mt-0.5" /> {keepCase(c)}
                 </li>
               ))}
             </ul>
@@ -97,7 +98,7 @@ export default function Home() {
             a contract blending manufacturer with shareholders directly involved in the day-to-day running of the business.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate">
-            Today we blend sweet and savoury products for leading FMCG and Quick Service Restaurant brands, as part of the Südzucker Group
+            Today we blend sweet and savoury products for leading FMCG and <span className="normal-case">Quick Service Restaurant</span> brands, as part of the Südzucker Group
             through our partnership with CoSo / PortionPack Group.
           </p>
           <Link href="/about" className="btn-secondary mt-8">
@@ -156,7 +157,7 @@ export default function Home() {
       <section className="bg-teal-deep py-20 text-white lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div data-reveal>
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-pale">How we work</p>
+            <p className="text-xs font-extrabold lowercase tracking-[0.2em] text-pale">How we work</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-black leading-tight sm:text-4xl">A complete B2B solution for our customers</h2>
           </div>
           <ol className="mt-12 grid gap-6 md:grid-cols-4">
@@ -199,8 +200,8 @@ export default function Home() {
                 <li key={c.name} data-reveal="right" style={delay(i, 80)} className="card-white flex gap-4 p-5">
                   <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green text-sm font-extrabold text-white"><Check /></span>
                   <span>
-                    <span className="block font-extrabold text-teal">{c.name}</span>
-                    <span className="text-slate">{c.detail}</span>
+                    <span className="block font-extrabold text-teal">{keepCase(c.name)}</span>
+                    <span className="text-slate">{keepCase(c.detail)}</span>
                   </span>
                 </li>
               ))}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import CallToAction from "@/components/CallToAction";
 import PageHero from "@/components/PageHero";
 import Check from "@/components/Check";
+import { keepCase } from "@/lib/keepCase";
 import { CERTIFICATIONS, CERTIFIED_VENDOR_TO, INTEGRITY, SAFETY } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,8 +30,8 @@ export default function QualityPage() {
           {CERTIFICATIONS.map((c) => (
             <div key={c.name} className="card lift p-6">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal text-lg font-extrabold text-white"><Check /></span>
-              <h3 className="mt-5 text-xl font-extrabold text-teal">{c.name}</h3>
-              <p className="mt-2 leading-relaxed text-ink/80">{c.detail}</p>
+              <h3 className="mt-5 text-xl font-extrabold text-teal">{keepCase(c.name)}</h3>
+              <p className="mt-2 leading-relaxed text-ink/80">{keepCase(c.detail)}</p>
             </div>
           ))}
         </div>
