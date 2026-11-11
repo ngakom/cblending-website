@@ -35,8 +35,8 @@ export default function AboutPage() {
           </p>
           <p>
             CBS was selected by the AVI board as the winner of a joint Corporate Social Investment project, which provided start-up capital.{" "}
-            <span className="normal-case">CoSo</span> is a shareholder assisting as mentor and, through our partnership with <PartnerName />, we
-            are a proud part of the <span className="normal-case">Südzucker Group</span>.
+            <PartnerName />, is a minority shareholder in CBS and assists as mentor. Through this partnership, we are a proud part of the{" "}
+            <span className="normal-case">Südzucker Group</span>.
           </p>
           <p>
             Our long-term partnerships with blue-chip customers have enabled us to develop our employees into highly qualified
