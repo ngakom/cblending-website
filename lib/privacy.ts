@@ -448,7 +448,7 @@ export const PRIVACY_POLICY: PolicyBlock[] = [
       "Name: Kgaugelo Sekwaila",
       "Contact number: 010 021 5554",
       "Email address: kg@cblending.co.za",
-      "Physical address: 160 Glen Acres, Port Estate, Glen Austin A.H."
+      "Physical address: Unit 160, 69 Austin Road, Glen Acres Estate, Glen Austin, Midrand, 1685"
     ]
   }
 ];
